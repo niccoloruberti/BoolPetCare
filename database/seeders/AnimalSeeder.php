@@ -18,7 +18,7 @@ class AnimalSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
-        for($i = 1; $i <= 20; $i++) {
+        for ($i = 1; $i <= 20; $i++) {
             $animal = new Animal();
             $animal->name = $faker->firstName();
             $animal->specie = $faker->randomElement(['Cane', 'Gatto', 'Pesce', 'Uccelli', 'Roditori', 'Rettili']);

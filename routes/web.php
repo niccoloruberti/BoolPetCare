@@ -21,7 +21,7 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(function() {
+Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(function () {
     Route::get('/', [DashboardController::class,'index'])->name('dashboard');
     Route::resource('animals', AnimalController::class);
 });
@@ -33,4 +33,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

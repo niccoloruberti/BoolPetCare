@@ -63,8 +63,9 @@ class AnimalController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit(Animal $animal)
-    {
-        //
+    { {
+            return view('admin.animals.edit', compact('animal'));
+        }
     }
 
     /**
@@ -76,7 +77,11 @@ class AnimalController extends Controller
      */
     public function update(UpdateAnimalRequest $request, Animal $animal)
     {
-        //
+        $form_data = $request->all();
+
+        $animal->update($form_data);
+
+        return redirect()->route('admin.animals.show', $animal->id);
     }
 
     /**
@@ -87,6 +92,8 @@ class AnimalController extends Controller
      */
     public function destroy(Animal $animal)
     {
-        //
+        $animal->delete();
+
+        return redirect()->route('admin.animals.index');
     }
 }
