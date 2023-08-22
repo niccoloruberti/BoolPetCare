@@ -6,6 +6,7 @@ use App\Http\Requests\StoreAnimalRequest;
 use App\Http\Requests\UpdateAnimalRequest;
 use App\Models\Animal;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 
 class AnimalController extends Controller
 {
@@ -95,5 +96,23 @@ class AnimalController extends Controller
         $animal->delete();
 
         return redirect()->route('admin.animals.index');
+    }
+
+    
+    public function search(Request $request){
+        // Get the search value from the request
+        $search = $request->input('search');
+    
+        // Search in the title and body columns from the posts table
+        $animals = Animal::query()
+            ->where('name', 'LIKE', "%{$search}%")
+            ->orWhere('owner', 'LIKE', "%{$search}%")
+            ->orWhere('specie', 'LIKE', "%{$search}%")
+            ->get();
+
+            
+    
+        // Return the search view with the resluts compacted
+        return view('admin.animals.search', compact('animals'));
     }
 }

@@ -3,6 +3,12 @@
 @section('content')
 <div class="container">
     <div class="row">
+        <div class="col-12">
+            <form action="{{ route('admin.animals.search') }}" method="GET">
+                <input type="text" name="search" required/>
+                <button type="submit">Search</button>
+            </form>
+        </div>
         <table class="table table-striped">
             <thead>
                 <tr>
@@ -13,6 +19,7 @@
                 </tr>
             </thead>
             <tbody>
+                
                 @foreach($animals as $animal)
                     <tr>
                         <th>{{$animal->name}}</th>
@@ -46,8 +53,10 @@
                         </td>
                     </tr>
                 @endforeach
+                
             </tbody>
           </table>
     </div>
+
 </div>
 @endsection
