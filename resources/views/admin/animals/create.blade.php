@@ -20,34 +20,33 @@
 
             <div class="form-group mt-4">
                 <label class="control-label">specie</label>
-                <input type="text" name="specie" id="specie" placeholder="specie" value="{{ old('specie')}}"></input>
+                <input type="text" name="specie" id="specie" placeholder="specie" value="{{ old('specie')}}">
             </div>
 
             <div class="form-group mt-4">
                 <label class="control-label">data di nascita</label>
-                <input type="text" name="date_of_birth" id="date_of_birth" placeholder="data di nascita" value="{{ old('date_of_birth')}}"></input>
-            </div> 
+                <input type="text" name="date_of_birth" id="date_of_birth" placeholder="data di nascita" value="{{ old('date_of_birth')}}">
 
             <div class="form-group mt-4">
                 <label class="control-label">genere</label>
-                <input type="text" name="genre" id="genre" placeholder="genere" value="{{ old('genre')}}"></input>
+                <input type="text" name="genre" id="genre" placeholder="genere" value="{{ old('genre')}}">
             </div>
 
              <div class="form-group mt-4">
                 <label class="control-label">proprietario</label>
-                <input type="text" name="owner" id="date_of_birth" placeholder="proprietario" value="{{ old('date_of_birth')}}"></input>
+                <input type="text" name="owner" id="date_of_birth" placeholder="proprietario" value="{{ old('date_of_birth')}}">
              </div>
              <div class="form-group mt-4">
                 <label class="control-label">peso</label>
-                <input type="text" name="weight" id="weight" placeholder="weight" value="{{ old('weight')}}"></input>
+                <input type="text" name="weight" id="weight" placeholder="weight" value="{{ old('weight')}}">
              </div>
              <div class="form-group mt-4">
                 <label class="control-label">taglia</label>
-                <input type="text" name="size" id="size" placeholder="size" value="{{ old('size')}}"></input>
+                <input type="text" name="size" id="size" placeholder="size" value="{{ old('size')}}">
              </div>
              <div class="form-group mt-4">
                 <label class="control-label">immagine</label>
-                <input type="text" name="img_link" id="img_link" placeholder="" value="{{ old('img_link')}}"></input>
+                <input type="text" name="img_link" id="img_link" placeholder="" value="{{ old('img_link')}}">
              </div>
              <div class="form-group mt-4">
                 <label class="control-label">note aggiuntive</label>
