@@ -29,14 +29,14 @@
 
                         {{-- EDIT BUTTON --}}
                         <td>
-                            <a href="#" class="btn btn-sm btn-warning">
+                            <a href="{{ route('admin.animals.edit', $animal->id)}}" class="btn btn-sm btn-warning">
                                 <i class="fas fa-edit"></i>
                             </a>
                         </td>
 
                         {{-- DELETE BUTTON --}}
                         <td>
-                            <form class="d-inline-block" action="#" onsubmit="return confirm('Sei sicuro di voler eliminare questo progetto?')" method="POST">
+                            <form class="d-inline-block" action="{{ route('admin.animals.destroy', $animal->id)}}" onsubmit="return confirm('Sei sicuro di voler eliminare questo animale?')" method="POST">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-sm btn-danger">
