@@ -5,7 +5,7 @@
 <div class="container">
     <div class="row justify-content-between my-4">
         <div class="col my-4">
-            <h2 class="text-uppercase">edit</h2>
+            <h2 class="text-uppercase">Edit</h2>
         </div>
         <div class="col my-4">
             <div class="text-end">
