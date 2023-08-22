@@ -6,7 +6,7 @@
     <div class="row">
         <div class="col-12 my-5 text-end">
             <a href="{{ route('admin.animals.index')}}">
-                <button class="btn btn-primary btn-sm">Tutti gli animali</button>
+                <button class="btn btn-primary btn-sm">All Animals</button>
             </a>
         </div>
     </div>
