@@ -4,6 +4,13 @@
 @if($animals->isNotEmpty())
 <div class="container">
     <div class="row">
+        <div class="col-12 my-5 text-end">
+            <a href="{{ route('admin.animals.index')}}">
+                <button class="btn btn-primary btn-sm">Tutti gli animali</button>
+            </a>
+        </div>
+    </div>
+    <div class="row">
         <div class="col-12">
             <table class="table table-striped">
                 <thead>
