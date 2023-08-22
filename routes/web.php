@@ -16,7 +16,7 @@ use App\Http\Controllers\DashboardController as DashBoardController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(function() {
