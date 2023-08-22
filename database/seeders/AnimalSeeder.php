@@ -21,7 +21,7 @@ class AnimalSeeder extends Seeder
         for ($i = 1; $i <= 20; $i++) {
             $animal = new Animal();
             $animal->name = $faker->firstName();
-            $animal->specie = $faker->randomElement(['Cane', 'Gatto', 'Pesce', 'Uccelli', 'Roditori', 'Rettili']);
+            $animal->specie = $faker->randomElement(['Dog', 'Cat', 'Fish', 'Bird', 'Reptile', 'Horse']);
             $animal->date_of_birth = $faker->date();
             $animal->genre = $faker->randomElement(['M', 'F']);
             $animal->owner = $faker->name();
