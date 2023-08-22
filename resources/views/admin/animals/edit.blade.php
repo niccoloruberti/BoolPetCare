@@ -18,6 +18,10 @@
                     @csrf
                     @method('PUT')
                     <div class="form-group">
+                        <label class="control-label mb-1">Name</label>
+                        <input type="text" id="name" name="name" class="form-control" placeholder="name" value="{{old('name') ?? $animal->name}}">
+                    </div>
+                    <div class="form-group my-4">
                         <label class="control-label mb-1">Specie</label>
                         <input type="text" id="specie" name="specie" class="form-control" placeholder="specie" value="{{old('specie') ?? $animal->specie}}">
                     </div>
