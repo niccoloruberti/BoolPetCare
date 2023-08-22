@@ -3,11 +3,12 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-12 my-5">
+        <div class="col-12 my-5 d-flex justify-content-between">
             <form action="{{ route('admin.animals.search') }}" method="GET">
                 <input type="text" name="search" required/>
                 <button class="btn btn-success ms-3" type="submit">Search</button>
             </form>
+            <a class="btn btn-warning" href="{{ route('admin.animals.create')}}">Add animal</a>
         </div>
         <table class="table table-striped">
             <thead>
