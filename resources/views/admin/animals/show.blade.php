@@ -6,6 +6,10 @@
             <div class="my-4 d-flex justify-content-end">
                 <a href="{{route('admin.animals.index')}}" class="btn btn-sm btn-primary">All Animals</a>
             </div>
+            {{-- libretto vaccinazioni --}}
+            <div class="my-4 d-flex justify-content-end">
+                <a href="{{route('admin.animal_vaccination.index')}}" class="btn btn-sm btn-primary">Libretto Vaccinazioni</a>
+            </div>
             <div class="col-12">
                 <div class="d-flex justify-content-between align-items-center">
                     <div>

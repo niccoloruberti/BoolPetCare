@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests\StoreAnimal_VaccinationRequest;
 use App\Http\Requests\UpdateAnimal_VaccinationRequest;
 use App\Models\Animal_Vaccination;
+use App\Http\Controllers\Controller;
 
 class AnimalVaccinationController extends Controller
 {
@@ -15,7 +16,7 @@ class AnimalVaccinationController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.animal_vaccination.index');
     }
 
     /**
