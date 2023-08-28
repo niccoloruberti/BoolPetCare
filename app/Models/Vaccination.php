@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Vaccination extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['vaccine', 'ph'];
 }
