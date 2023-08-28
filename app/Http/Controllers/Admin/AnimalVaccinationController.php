@@ -6,6 +6,8 @@ use App\Http\Requests\StoreAnimal_VaccinationRequest;
 use App\Http\Requests\UpdateAnimal_VaccinationRequest;
 use App\Models\Animal_Vaccination;
 use App\Http\Controllers\Controller;
+use App\Models\Animal;
+use App\Models\Vaccination;
 
 class AnimalVaccinationController extends Controller
 {
@@ -24,9 +26,12 @@ class AnimalVaccinationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($)
     {
-        //
+        $vaccinations = Vaccination::all();
+        // $animals = Animal::all();
+        dd($animal->id);
+        return view('admin.animal_vaccination.create', compact('vaccinations'));
     }
 
     /**
@@ -35,9 +40,20 @@ class AnimalVaccinationController extends Controller
      * @param  \App\Http\Requests\StoreAnimal_VaccinationRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreAnimal_VaccinationRequest $request)
+    public function store(StoreAnimal_VaccinationRequest $request, $id)
     {
-        //
+        $form_data = $request->all();
+        $vaccine = new Animal_Vaccination();
+
+        $vaccine->fill($form_data);
+
+        $vaccine->save();
+
+        if($request->has('vaccinations')) {
+            $vaccine->vaccinations()->sync($request->vaccinations);
+        }
+
+        dd($vaccine);
     }
 
     /**

@@ -9,5 +9,7 @@ class Animal_Vaccination extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['date_injection', 'dose', 'booster_date', 'notes'];
+    protected $table = 'animal_vaccination';
+
+    protected $fillable = ['date_injection', 'dose', 'booster_date', 'notes', 'animal_id'];
 }
