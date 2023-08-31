@@ -13,6 +13,6 @@ class Animal extends Model
     protected $fillable = ['name', 'specie', 'date_of_birth', 'genre', 'owner', 'weight', 'size', 'img_link'];
 
     public function vaccinations() {
-        return $this->belongsToMany(Vaccination::class);
+        return $this->belongsToMany(Vaccination::class, 'animal_vaccination')->withPivot('date_injection','dose','booster_date', 'notes');
     }
 }

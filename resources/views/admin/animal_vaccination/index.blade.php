@@ -2,5 +2,5 @@
 
 @section('content')
     libretto
-    <a class="btn btn-warning" href="{{ route('admin.animal_vaccination.create')}}">Add Vaccination</a>
+    <a class="btn btn-warning" href="{{ route('admin.animal_vaccination.create')}}?animal={{$id_animal}}">Add Vaccination</a>
 @endsection

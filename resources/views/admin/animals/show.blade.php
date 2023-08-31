@@ -8,7 +8,8 @@
             </div>
             {{-- libretto vaccinazioni --}}
             <div class="my-4 d-flex justify-content-end">
-                <a href="{{route('admin.animal_vaccination.index')}}" class="btn btn-sm btn-primary">Libretto Vaccinazioni</a>
+                    {{-- MODIFICATA ROUTE PER PORTARCI DIETRO L'ID DELL'ANIMALE, PROBABILMENTE DA FARE ANCHE NEL PASSAGGIO DATI A STORE PERCHE' RESTITUISCE NULL --}}
+                <a href="{{route('admin.animal_vaccination.index')}}?animal={{$animal->id}}" class="btn btn-sm btn-primary">Libretto Vaccinazioni</a>
             </div>
             <div class="col-12">
                 <div class="d-flex justify-content-between align-items-center">
