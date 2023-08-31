@@ -17,11 +17,18 @@ class AnimalVaccinationController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index(Request $request)
-    {
+    {   
+        $vaccines_name= Vaccination::all();
+       // dd($vaccines_name);
         $id_animal = $request->animal;
+        $vaccines = Animal_Vaccination::where($id_animal);
+        $animal = Animal::find($id_animal);
         
         
-        return view('admin.animal_vaccination.index', compact('id_animal'));
+        
+        
+        
+        return view('admin.animal_vaccination.index', compact('id_animal', 'vaccines','vaccines_name','animal'));
     }
 
     /**
