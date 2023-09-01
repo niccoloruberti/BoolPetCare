@@ -5,6 +5,7 @@ use App\Models\Vaccination;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Owner;
 
 class Animal extends Model
 {
@@ -14,5 +15,9 @@ class Animal extends Model
 
     public function vaccinations() {
         return $this->belongsToMany(Vaccination::class, 'animal_vaccination')->withPivot('date_injection','dose','booster_date', 'notes');
+    }
+
+    public function owner() {
+        return $this->belongsTo(Owner::class);
     }
 }
