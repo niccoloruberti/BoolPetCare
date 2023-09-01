@@ -17,42 +17,79 @@
                 <form action="{{route('admin.animals.update', $animal->id)}}" method="POST">
                     @csrf
                     @method('PUT')
+
+                    {{-- NAME --}}
                     <div class="form-group">
                         <label class="control-label mb-1">Name</label>
-                        <input type="text" id="name" name="name" class="form-control" placeholder="name" value="{{old('name') ?? $animal->name}}">
+                        <input type="text" id="name" name="name" class="form-control @error('name') is-invalid @enderror" value="{{old('name') ?? $animal->name}}" placeholder="Enter Name" autofocus required>
+                        @error('name')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
                     </div>
+
+                    {{-- SPECIE --}}
                     <div class="form-group my-4">
                         <label class="control-label mb-1">Specie</label>
-                        <input type="text" id="specie" name="specie" class="form-control" placeholder="specie" value="{{old('specie') ?? $animal->specie}}">
+                        <input type="text" id="specie" name="specie" class="form-control @error('specie') is-invalid @enderror" value="{{old('specie') ?? $animal->specie}}" placeholder="Enter Specie" required>
+                        @error('specie')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
                     </div>
+
+                    {{-- DATE OF BIRTH --}}
                     <div class="form-group my-4">
                         <label class="control-label mb-1">Date of birth</label>
-                        <input type="text" id="date_of_birth" name="date_of_birth" class="form-control" placeholder="date_of_birth" value="{{old('date_of_birth') ?? $animal->date_of_birth}}">
+                        <input type="date" id="date_of_birth" name="date_of_birth" class="form-control" value="{{old('date_of_birth') ?? $animal->date_of_birth}}" placeholder="Enter Date of birth">
                     </div>
+
+                    {{-- GENRE --}}
                     <div class="form-group my-4">
                         <label class="control-label mb-1">Genre</label>
-                        <input type="text" id="genre" name="genre" class="form-control" placeholder="genre" value="{{old('genre') ?? $animal->genre}}">
+                        <input type="text" id="genre" name="genre" class="form-control @error('genre') is-invalid @enderror" value="{{old('genre') ?? $animal->genre}}" placeholder="Enter Genre" oninput="this.value = this.value.toUpperCase()">
+                        @error('genre')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
                     </div>
+
+                    {{-- OWNER --}}
                     <div class="form-group my-4">
                         <label class="control-label mb-1">Owner</label>
-                        <input type="text" id="owner" name="owner" class="form-control" placeholder="owner" value="{{old('owner') ?? $animal->owner}}">
+                        <input type="text" id="owner" name="owner" class="form-control @error('owner') is-invalid @enderror" value="{{old('owner') ?? $animal->owner}}" placeholder="Enter Owner's name and surname" required>
+                        @error('owner')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
                     </div>
+
+                    {{-- WEIGHT --}}
                     <div class="form-group my-4">
-                        <label class="control-label mb-1">Wight</label>
-                        <input type="text" id="weight" name="weight" class="form-control" placeholder="weight" value="{{old('weight') ?? $animal->weight}}">
+                        <label class="control-label mb-1">Weight</label>
+                        <input type="text" id="weight" name="weight" class="form-control @error('weight') is-invalid @enderror" value="{{old('weight') ?? $animal->weight}}" placeholder="Enter Weight">
+                        @error('weight')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
                     </div>
+
+                    {{-- SIZE --}}
                     <div class="form-group my-4">
                         <label class="control-label mb-1">Size</label>
-                        <input type="text" id="size" name="size" class="form-control" placeholder="size" value="{{old('size') ?? $animal->size}}">
+                        <input type="text" id="size" name="size" class="form-control" value="{{old('size') ?? $animal->size}}" placeholder="Enter Size" oninput="this.value = this.value.toUpperCase()" required>
                     </div>
+
+                    {{-- IMAGE --}}
                     <div class="form-group my-4">
                         <label class="control-label mb-1">Image</label>
-                        <input type="text" id="img_link" name="img_link" class="form-control" placeholder="img_link" value="{{old('img_link') ?? $animal->img_link}}">
+                        <input type="url" id="img_link" name="img_link" class="form-control @error('img_link') is-invalid @enderror" value="{{old('img_link') ?? $animal->img_link}}" placeholder="Enter Image link">
+                        @error('img_link')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
                     </div>
+
+                    {{-- NOTES --}}
                     <div class="form-group my-4">
                         <label class="control-label mb-1">Notes</label>
-                        <textarea name="notes" id="notes" cols="30" rows="5" class="form-control" placeholder="notes">{{old('notes') ?? $animal->notes}}</textarea>
+                        <textarea name="notes" id="notes" cols="30" rows="5" class="form-control" placeholder="Enter Notes">{{old('notes') ?? $animal->notes}}</textarea>
                     </div>
+                    
                     <div class=" form-group my-4">
                         <button type="submit" class="btn btn-success"> Save</button>
                     </div>
@@ -61,4 +98,24 @@
         </div>
     </div>
 </div>
+<script>
+    // Funzione per applicare l'autocapitalizzazione delle parole a un input
+    function applyAutoCapitalize(inputId) {
+        var inputElement = document.getElementById(inputId);
+ 
+        inputElement.addEventListener('input', function() {
+            var inputValue = inputElement.value;
+            var formattedValue = inputValue.replace(/\b\w/g, function(match) {
+                return match.toUpperCase();
+            });
+            inputElement.value = formattedValue;
+        });
+    }
+ 
+    // Applica l'autocapitalizzazione agli input desiderati
+    applyAutoCapitalize('name');
+    applyAutoCapitalize('specie');
+    applyAutoCapitalize('owner');
+    applyAutoCapitalize('notes');
+ </script>
 @endsection
