@@ -5,6 +5,7 @@
     <div class="row">
         <div class="col-7 offset-1">
             <form action="{{route('admin.animals.update.vaccine', ['animal'=>$animal])}}" method="POST">
+                @method('PUT')
                 @csrf
     
                 {{-- DATE INJECTION --}}
