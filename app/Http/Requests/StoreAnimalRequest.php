@@ -24,7 +24,35 @@ class StoreAnimalRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'required|max:50',
+            'specie' => 'required|max:50',
+            'genre' => 'max:1',
+            'owner' => 'required',
+            'weight' => 'numeric|nullable',
+            'size' => 'required',
+            'img_link' => 'url:http,https|nullable',
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'name.required' => 'Name is required!',
+            'name.max' => 'Too many characters, max :max',
+            'name.alpha_num:ascii' => 'Name must be a word.',
+
+            'specie.required' => 'Specie is required!',
+            'specie.max' => 'Too many characters, max :max',
+
+            'genre.max' => 'Enter "M" or "F"',
+
+            'owner.required' => 'Owner\'s name and surname are required!',
+
+            'weight.numeric' => 'Enter numbers followed by a "." for decimals. (weight will be assigned with Kg)',
+
+            'size.required' => 'Size is required!',
+
+            'img_link.url' => 'Image must be an url and must start with "http or https"',
         ];
     }
 }
