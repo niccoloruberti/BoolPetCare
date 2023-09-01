@@ -20,17 +20,17 @@ class AnimalController extends Controller
     public function index()
     {
         $animals = Animal::all();
-        
+
         return view('admin.animals.index', compact('animals'));
     }
 
     public function animal_vaccine_index(Request $request, $animal)
-    {   
+    {
         $id_animal = $request->animal;
         $animal = Animal::find($id_animal);
         $animal_vaccine = Animal_Vaccination::all();
-        
-        
+
+
         return view('admin.animals.animal_vaccine_index', compact('animal_vaccine', 'animal'));
     }
 
@@ -44,14 +44,14 @@ class AnimalController extends Controller
         return view('admin.animals.create');
     }
 
-    public function animal_vaccine_create(Request $request,Animal $animal)
+    public function animal_vaccine_create(Request $request, Animal $animal)
     {
-        $vaccinations= Vaccination::all();
+        $vaccinations = Vaccination::all();
         $id_animal = $request->animal;
-        $animal_id= $id_animal->id;
+        $animal_id = $id_animal->id;
 
-        
-        return view('admin.animals.animal_vaccine_create', compact('vaccinations','animal'));
+
+        return view('admin.animals.animal_vaccine_create', compact('vaccinations', 'animal'));
     }
 
     /**
@@ -63,7 +63,7 @@ class AnimalController extends Controller
     public function store(StoreAnimalRequest $request)
     {
         $form_data = $request->all();
-        
+
         $animal = new Animal();
         $animal->fill($form_data);
         $animal->save();
@@ -72,12 +72,12 @@ class AnimalController extends Controller
 
     public function animal_vaccine_store(Request $request, Animal $animal)
     {
-        $form_data= $request->all();
+        $form_data = $request->all();
         $animal_vaccine = new Animal_Vaccination;
 
         $form_data['animal_id'] = $animal->id;
         $animal_vaccine->fill($form_data);
-        
+
         $animal_vaccine->save();
         return redirect()->route('admin.animals.index.vaccine', ['animal' => $animal->id]);
     }
@@ -91,8 +91,8 @@ class AnimalController extends Controller
     public function show(Animal $animal)
     {
         $id_animal = $animal->id;
-        
-        return view ('admin.animals.show', compact('animal', 'id_animal'));
+
+        return view('admin.animals.show', compact('animal', 'id_animal'));
     }
 
     /**
@@ -102,18 +102,17 @@ class AnimalController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit(Animal $animal)
-    { 
-            return view('admin.animals.edit', compact('animal'));
-        
+    {
+        return view('admin.animals.edit', compact('animal'));
     }
 
     public function animal_vaccine_edit(Animal $animal, Request $request, Animal_Vaccination $animal_vaccination)
     {
-        $vaccinations= Vaccination::all();
+        $vaccinations = Vaccination::all();
         $id_animal = $request->animal;
-        $animal_id= $id_animal->id;
-        
-        return view('admin.animals.animal_vaccine_edit', compact('animal', 'vaccinations','animal_vaccination'));
+        $animal_id = $id_animal->id;
+
+        return view('admin.animals.animal_vaccine_edit', compact('animal', 'vaccinations', 'animal_vaccination'));
     }
 
     /**
@@ -134,10 +133,10 @@ class AnimalController extends Controller
 
     public function animal_vaccine_update(Request $request, Animal $animal, Animal_Vaccination $animal_vaccination)
     {
-         $form_data= $request->all();
-         $animal_vaccination = Animal_Vaccination::find($animal->id);
-         $animal_vaccination->update($form_data);
-        
+        $form_data = $request->all();
+        $animal_vaccination = Animal_Vaccination::find($animal->id);
+        $animal_vaccination->update($form_data);
+
         return redirect()->route('admin.animals.index.vaccine', ['animal' => $animal->id]);
     }
 
@@ -148,7 +147,7 @@ class AnimalController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy(Animal $animal)
-    {   
+    {
         $animal->vaccinations()->detach();
         $animal->delete();
 
@@ -156,16 +155,17 @@ class AnimalController extends Controller
     }
 
     public function animal_vaccine_destroy(Animal_Vaccination $animal_vaccination, Animal $animal)
-    {    
+    {
         $animal_vaccination = Animal_Vaccination::find($animal->id);
         $animal_vaccination->delete();
         return  redirect()->route('admin.animals.index.vaccine', ['animal' => $animal->id]);
     }
-    
-    public function search(Request $request){
+
+    public function search(Request $request)
+    {
         // Get the search value from the request
         $search = $request->input('search');
-    
+
         // Search in the title and body columns from the posts table
         $animals = Animal::query()
             ->where('name', 'LIKE', "%{$search}%")
@@ -173,8 +173,8 @@ class AnimalController extends Controller
             ->orWhere('specie', 'LIKE', "%{$search}%")
             ->get();
 
-            
-    
+
+
         // Return the search view with the resluts compacted
         return view('admin.animals.search', compact('animals'));
     }

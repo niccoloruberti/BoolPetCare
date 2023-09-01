@@ -20,7 +20,7 @@
 
                     {{-- NAME --}}
                     <div class="form-group">
-                        <label class="control-label mb-1">Name</label>
+                        <label class="control-label mb-2">Name</label>
                         <input type="text" id="name" name="name" class="form-control @error('name') is-invalid @enderror" value="{{old('name') ?? $animal->name}}" placeholder="Enter Name" autofocus required>
                         @error('name')
                             <div class="text-danger">{{ $message }}</div>
@@ -29,7 +29,7 @@
 
                     {{-- SPECIE --}}
                     <div class="form-group my-4">
-                        <label class="control-label mb-1">Specie</label>
+                        <label class="control-label mb-2">Specie</label>
                         <input type="text" id="specie" name="specie" class="form-control @error('specie') is-invalid @enderror" value="{{old('specie') ?? $animal->specie}}" placeholder="Enter Specie" required>
                         @error('specie')
                             <div class="text-danger">{{ $message }}</div>
@@ -38,13 +38,13 @@
 
                     {{-- DATE OF BIRTH --}}
                     <div class="form-group my-4">
-                        <label class="control-label mb-1">Date of birth</label>
+                        <label class="control-label mb-2">Date of birth</label>
                         <input type="date" id="date_of_birth" name="date_of_birth" class="form-control" value="{{old('date_of_birth') ?? $animal->date_of_birth}}" placeholder="Enter Date of birth">
                     </div>
 
                     {{-- GENRE --}}
                     <div class="form-group my-4">
-                        <label class="control-label mb-1">Genre</label>
+                        <label class="control-label mb-2">Genre</label>
                         <input type="text" id="genre" name="genre" class="form-control @error('genre') is-invalid @enderror" value="{{old('genre') ?? $animal->genre}}" placeholder="Enter Genre" oninput="this.value = this.value.toUpperCase()">
                         @error('genre')
                             <div class="text-danger">{{ $message }}</div>
@@ -53,7 +53,7 @@
 
                     {{-- OWNER --}}
                     <div class="form-group my-4">
-                        <label class="control-label mb-1">Owner</label>
+                        <label class="control-label mb-2">Owner</label>
                         <input type="text" id="owner" name="owner" class="form-control @error('owner') is-invalid @enderror" value="{{old('owner') ?? $animal->owner}}" placeholder="Enter Owner's name and surname" required>
                         @error('owner')
                             <div class="text-danger">{{ $message }}</div>
@@ -62,7 +62,7 @@
 
                     {{-- WEIGHT --}}
                     <div class="form-group my-4">
-                        <label class="control-label mb-1">Weight</label>
+                        <label class="control-label mb-2">Weight</label>
                         <input type="number" min="0" max="100" step=".1" id="weight" name="weight" class="form-control @error('weight') is-invalid @enderror" value="{{old('weight') ?? $animal->weight}}" placeholder="Enter Weight">
                         @error('weight')
                             <div class="text-danger">{{ $message }}</div>
@@ -71,13 +71,13 @@
 
                     {{-- SIZE --}}
                     <div class="form-group my-4">
-                        <label class="control-label mb-1">Size</label>
+                        <label class="control-label mb-2">Size</label>
                         <input type="text" id="size" name="size" class="form-control" value="{{old('size') ?? $animal->size}}" placeholder="Enter Size" oninput="this.value = this.value.toUpperCase()" required>
                     </div>
 
                     {{-- IMAGE --}}
                     <div class="form-group my-4">
-                        <label class="control-label mb-1">Image</label>
+                        <label class="control-label mb-2">Image</label>
                         <input type="url" id="img_link" name="img_link" class="form-control @error('img_link') is-invalid @enderror" value="{{old('img_link') ?? $animal->img_link}}" placeholder="Enter Image link">
                         @error('img_link')
                             <div class="text-danger">{{ $message }}</div>
@@ -86,7 +86,7 @@
 
                     {{-- NOTES --}}
                     <div class="form-group my-4">
-                        <label class="control-label mb-1">Notes</label>
+                        <label class="control-label mb-2">Notes</label>
                         <textarea name="notes" id="notes" cols="30" rows="5" class="form-control" placeholder="Enter Notes">{{old('notes') ?? $animal->notes}}</textarea>
                     </div>
                     
