@@ -11,13 +11,12 @@
               </div>
            </div>
        </div>
-        
        <div class="col-12">
           <form action="{{ route('admin.animals.store') }}" method="POST">
             @csrf
             <div class="form-group mt-4">
                <label for="name">Name</label>
-               <input type="text" name="name" id="name" class="form-control @error('name') is-invalid @enderror"  value="{{ old('name') }}" placeholder="Enter Name" required>
+               <input type="text" name="name" id="name" class="form-control @error('name') is-invalid @enderror"  value="{{ old('name') }}" placeholder="Enter Name" autocapitalize="words" autofocus required>
                @error('name')
                   <div class="text-danger">{{ $message }}</div>
                @enderror
@@ -38,7 +37,7 @@
 
             <div class="form-group mt-4">
                <label for="genre">Genre</label>
-               <input type="text" name="genre" id="genre" class="form-control @error('genre') is-invalid @enderror"  value="{{ old('genre') }}"  placeholder="Enter Genre">
+               <input type="text" name="genre" id="genre" class="form-control @error('genre') is-invalid @enderror"  value="{{ old('genre') }}" placeholder="Enter Genre" oninput="this.value = this.value.toUpperCase()">
                @error('genre')
                   <div class="text-danger">{{ $message }}</div>
                @enderror
@@ -54,15 +53,21 @@
 
             <div class="form-group mt-4">
                <label for="weight">Weight</label>
-               <input type="text" name="weight" id="weight" class="form-control"  value="{{ old('weight') }}"  placeholder="Enter Weight">
+               <input type="text" name="weight" id="weight" class="form-control  @error('weight') is-invalid @enderror"  value="{{ old('weight') }}"  placeholder="Enter Weight">
+               @error('weight')
+                  <div class="text-danger">{{ $message }}</div>
+               @enderror
             </div>
             <div class="form-group mt-4">
                <label for="size">Size</label>
-               <input type="text" name="size" id="size" class="form-control"  value="{{ old('size') }}"  placeholder="Enter Size" required>
+               <input type="text" name="size" id="size" class="form-control"  value="{{ old('size') }}"  placeholder="Enter Size" oninput="this.value = this.value.toUpperCase()" required>
             </div>
             <div class="form-group mt-4">
                <label for="img_link">Image</label>
-               <input type="text" name="img_link" id="img_link" class="form-control"  value="{{ old('img_link') }}"  placeholder="Enter Image link">
+               <input type="text" name="img_link" id="img_link" class="form-control  @error('img_link') is-invalid @enderror"  value="{{ old('img_link') }}"  placeholder="Enter Image link">
+               @error('img_link')
+                  <div class="text-danger">{{ $message }}</div>
+               @enderror
             </div>
             <div class="form-group mt-4">
                <label for="notes">Notes</label>
@@ -76,4 +81,25 @@
       </div>
    </div>
 </div>
+<script>
+   // Funzione per applicare l'autocapitalizzazione delle parole a un input
+   function applyAutoCapitalize(inputId) {
+       var inputElement = document.getElementById(inputId);
+
+       inputElement.addEventListener('input', function() {
+           var inputValue = inputElement.value;
+           var formattedValue = inputValue.replace(/\b\w/g, function(match) {
+               return match.toUpperCase();
+           });
+           inputElement.value = formattedValue;
+       });
+   }
+
+   // Applica l'autocapitalizzazione agli input desiderati
+   applyAutoCapitalize('name');
+   applyAutoCapitalize('specie');
+   applyAutoCapitalize('owner');
+   applyAutoCapitalize('notes');
+</script>
 @endsection
+
