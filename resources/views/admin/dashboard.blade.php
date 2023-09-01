@@ -23,7 +23,8 @@
         </div>
     </div>
     <div class="col-12 d-flex justify-content-center my-5">
-        <a href="{{route('admin.animals.index')}}" class="btn btn-primary btn-md">Animals list</a>
+        <a href="{{route('admin.animals.index')}}" class="btn btn-primary btn-md me-2">Animals list</a>
+        <a href="{{route('admin.animals.index')}}" class="btn btn-primary btn-md">Owners list</a>
     </div>
 </div>
 @endsection
