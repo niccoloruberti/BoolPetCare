@@ -38,6 +38,8 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(
     ->name('animals.edit.vaccine');
     Route::put('animals/{animal}/update/vaccine', [AnimalController::class, 'animal_vaccine_update'])
     ->name('animals.update.vaccine');
+    Route::delete('animals/{animal}/destroy/vaccine', [AnimalController::class, 'animal_vaccine_destroy'])
+    ->name('animals.destroy.vaccine');
     Route::get('/search/', [AnimalController::class, 'search'])->name('animals.search');
     
 });
