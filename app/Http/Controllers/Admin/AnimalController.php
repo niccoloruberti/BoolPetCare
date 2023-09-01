@@ -155,7 +155,7 @@ class AnimalController extends Controller
     public function update(UpdateAnimalRequest $request, Animal $animal)
     {
         $form_data = $request->all();
-
+        
         $animal->update($form_data);
 
         return redirect()->route('admin.animals.show', $animal->id);
@@ -164,7 +164,9 @@ class AnimalController extends Controller
     public function animal_vaccine_update(Request $request, Animal $animal, Animal_Vaccination $animal_vaccination)
     {
          $form_data= $request->all();
-         $animal_vaccination = Animal_Vaccination::find($animal->id);
+         $animal_vaccination = Animal_Vaccination::find($animal_vaccination->id);
+         
+        dd($request)      ;         
          $animal_vaccination->update($form_data);
         
         return redirect()->route('admin.animals.index.vaccine', ['animal' => $animal->id]);

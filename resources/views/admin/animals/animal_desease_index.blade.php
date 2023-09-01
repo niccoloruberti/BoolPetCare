@@ -19,8 +19,10 @@
                 </tr>
             </thead>
             <tbody>
-               @dd($animal->deseases)
                
+               @foreach($animal->deseases as $desease)
+                    
+               @endforeach
                 {{-- @dd($vaccination->pivot->date_injection) 
                  @dd($vaccination->vaccine) --}}
                 {{-- @foreach($animal->vaccinations as $vaccination)
