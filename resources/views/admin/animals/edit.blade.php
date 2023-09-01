@@ -42,10 +42,13 @@
                         <input type="date" id="date_of_birth" name="date_of_birth" class="form-control" value="{{old('date_of_birth') ?? $animal->date_of_birth}}" placeholder="Enter Date of birth">
                     </div>
 
-                    {{-- GENRE --}}
+                   {{-- GENRE --}}
                     <div class="form-group my-4">
-                        <label class="control-label mb-2">Genre</label>
-                        <input type="text" id="genre" name="genre" class="form-control @error('genre') is-invalid @enderror" value="{{old('genre') ?? $animal->genre}}" placeholder="Enter Genre" oninput="this.value = this.value.toUpperCase()">
+                        <label class="control-label mb-2" for="genre">Genre</label>
+                        <select class="form-control" name="genre">
+                            <option value="M" {{ (old('genre') ?? $animal->genre) === 'M' ? 'selected' : '' }}>M</option>
+                            <option value="F" {{ (old('genre') ?? $animal->genre) === 'F' ? 'selected' : '' }}>F</option>
+                        </select>
                         @error('genre')
                             <div class="text-danger">{{ $message }}</div>
                         @enderror

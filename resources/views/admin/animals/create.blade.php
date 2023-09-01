@@ -43,7 +43,10 @@
             {{-- GENRE --}}
             <div class="form-group mt-4">
                <label class="mb-2" for="genre">Genre</label>
-               <input type="text" name="genre" id="genre" class="form-control @error('genre') is-invalid @enderror"  value="{{ old('genre') }}" placeholder="Enter Genre" oninput="this.value = this.value.toUpperCase()">
+               <select name="genre" id="genre" class="form-control @error('genre') is-invalid @enderror" required>
+                  <option value="M" {{ (old('genre') == 'M') ? 'selected' : '' }}>M</option>
+                  <option value="F" {{ (old('genre') == 'F') ? 'selected' : '' }}>F</option>
+               </select>
                @error('genre')
                   <div class="text-danger">{{ $message }}</div>
                @enderror
