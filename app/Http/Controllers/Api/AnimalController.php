@@ -12,8 +12,8 @@ class AnimalController extends Controller
         $animals = Animal::with('vaccinations')->get();
         $vaccinationsData = [];
         foreach ($animals as $animal) {
-            $vaccinations = $animal->vaccinations; // Vaccinations di questo animale
-            $vaccinationsData[] = $vaccinations; // Aggiungi le vaccinations all'array di risultati
+            $vaccinations = $animal->vaccinations; 
+            $vaccinationsData[] = $vaccinations; 
         }
     
         return response()->json([
