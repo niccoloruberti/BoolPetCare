@@ -27,7 +27,17 @@ Route::get('/', function () {
 Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(function () {
     Route::get('/', [DashboardController::class,'index'])->name('dashboard');
     Route::resource('animals', AnimalController::class);
-    Route::resource('animal_vaccination', AnimalVaccinationController::class);
+    //Route::resource('animal_vaccination', AnimalVaccinationController::class);
+    Route::get('animals/{animal}/index/vaccine', [AnimalController::class, 'animal_vaccine_index'])
+    ->name('animals.index.vaccine');
+    Route::get('animals/{animal}/create/vaccine', [AnimalController::class, 'animal_vaccine_create'])
+    ->name('animals.create.vaccine');
+    Route::post('animals/{animal}/store/vaccine', [AnimalController::class, 'animal_vaccine_store'])
+    ->name('animals.store.vaccine');
+    Route::get('animals/{animal}/edit/vaccine', [AnimalController::class, 'animal_vaccine_edit'])
+    ->name('animals.edit.vaccine');
+    Route::put('animals/{animal}/update/vaccine', [AnimalController::class, 'animal_vaccine_update'])
+    ->name('animals.update.vaccine');
     Route::get('/search/', [AnimalController::class, 'search'])->name('animals.search');
     
 });
