@@ -148,7 +148,8 @@ class AnimalController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy(Animal $animal)
-    {
+    {   
+        $animal->vaccinations()->detach();
         $animal->delete();
 
         return redirect()->route('admin.animals.index');
