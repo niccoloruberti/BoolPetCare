@@ -61,7 +61,7 @@
             {{-- WEIGHT --}}
             <div class="form-group mt-4">
                <label for="weight">Weight</label>
-               <input type="text" name="weight" id="weight" class="form-control  @error('weight') is-invalid @enderror"  value="{{ old('weight') }}"  placeholder="Enter Weight">
+               <input type="number" min="0" max="100" step=".1" name="weight" id="weight" class="form-control  @error('weight') is-invalid @enderror"  value="{{ old('weight') }}"  placeholder="Enter Weight">
                @error('weight')
                   <div class="text-danger">{{ $message }}</div>
                @enderror
