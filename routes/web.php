@@ -51,6 +51,8 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(
    ->name('animals.edit.desease');
    Route::put('animals/{animal}/update/desease', [AnimalController::class, 'animal_desease_update'])
    ->name('animals.update.desease');
+    Route::delete('animals/{animal}/destroy/desease', [AnimalController::class, 'animal_desease_destroy'])
+    ->name('animals.destroy.desease');
    
    //ROUTE SEARCH
     Route::get('/search/', [AnimalController::class, 'search'])->name('animals.search');

@@ -15,33 +15,32 @@
                     <th scope="col">Vaccine</th>
                     <th scope="col">Diagnosis</th>
                     <th scope="col">Notes</th>
+                    <th scope="col">Edit Desease</th>
+                    <th scope="col">Delete Desease</th>
                     
                 </tr>
             </thead>
             <tbody>
-               
-               @foreach($animal->deseases as $desease)
-                    
-               @endforeach
+          
                 {{-- @dd($vaccination->pivot->date_injection) 
                  @dd($vaccination->vaccine) --}}
-                {{-- @foreach($animal->vaccinations as $vaccination)
+                 @foreach($animal->deseases as $desease)
                
                
                 <tr>
-                    <th>{{$vaccination->vaccine}}</th>
-                    <th>{{$vaccination->ph}}</th>
-                    <td>{{$vaccination->pivot->date_injection}}</td>
-                    <td>{{$vaccination->pivot->dose}} mg</td>
-                    <td>{{$vaccination->pivot->booster_date}}</td>
-                    EDIT BUTTON
+                    <th>{{$desease->desease}}</th>
+                    <th></th>
+                    <td>{{$desease->pivot->diagnosis}}</td>
+                    <td>{{$desease->pivot->notes}} </td>
+                    
+                    {{-- EDIT BUTTON --}}
                      <td>
-                        <a href="{{ route('admin.animals.edit.vaccine', $animal->id)}}" class="btn btn-sm btn-warning">
+                        <a href="{{ route('admin.animals.edit.desease', $animal->id)}}" class="btn btn-sm btn-warning">
                             <i class="fas fa-edit"></i>
                         </a>
                     </td>
     
-                    DELETE BUTTON 
+                    {{-- DELETE BUTTON  --}}
                     <td>
                         <form class="d-inline-block" action="{{ route('admin.animals.destroy.vaccine', $animal->id)}}" onsubmit="return confirm('Sei sicuro di voler eliminare questo vaccino?')" method="POST">
                             @csrf
@@ -52,7 +51,7 @@
                         </form>
                     </td>
                 </tr>
-                @endforeach  --}}
+                @endforeach  
             </tbody>
         </table>
     </div>
