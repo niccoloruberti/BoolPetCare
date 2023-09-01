@@ -11,6 +11,10 @@
                     {{-- MODIFICATA ROUTE PER PORTARCI DIETRO L'ID DELL'ANIMALE, PROBABILMENTE DA FARE ANCHE NEL PASSAGGIO DATI A STORE PERCHE' RESTITUISCE NULL --}}
                 <a href="{{route('admin.animals.index.vaccine', ['animal' => $animal])}}" class="btn btn-sm btn-primary">Libretto Vaccinazioni</a>
             </div>
+            <div class="my-4 d-flex justify-content-end">
+                {{-- MODIFICATA ROUTE PER PORTARCI DIETRO L'ID DELL'ANIMALE, PROBABILMENTE DA FARE ANCHE NEL PASSAGGIO DATI A STORE PERCHE' RESTITUISCE NULL --}}
+            <a href="{{route('admin.animals.index.desease', ['animal' => $animal])}}" class="btn btn-sm btn-primary">Cartella Clinica</a>
+        </div>
             <div class="col-12">
                 <div class="d-flex justify-content-between align-items-center">
                     <div>
@@ -27,7 +31,6 @@
                 </div>
                 <div>
                     <img class="my-5" src="{{$animal->img_link}}" alt="">
-
                 </div>
                
             </div>

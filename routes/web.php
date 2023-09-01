@@ -4,7 +4,6 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\DashboardController as DashBoardController;
 use App\Http\Controllers\Admin\AnimalController as AnimalController;
-use App\Http\Controllers\Admin\AnimalVaccinationController as AnimalVaccinationController;
 use Illuminate\Http\Request;
 
 
@@ -27,7 +26,7 @@ Route::get('/', function () {
 Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(function () {
     Route::get('/', [DashboardController::class,'index'])->name('dashboard');
     Route::resource('animals', AnimalController::class);
-    //Route::resource('animal_vaccination', AnimalVaccinationController::class);
+    //ROUTE ANIMAL_VACCINES
     Route::get('animals/{animal}/index/vaccine', [AnimalController::class, 'animal_vaccine_index'])
     ->name('animals.index.vaccine');
     Route::get('animals/{animal}/create/vaccine', [AnimalController::class, 'animal_vaccine_create'])
@@ -40,6 +39,20 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(
     ->name('animals.update.vaccine');
     Route::delete('animals/{animal}/destroy/vaccine', [AnimalController::class, 'animal_vaccine_destroy'])
     ->name('animals.destroy.vaccine');
+   
+    //ROUTE ANIMAL_DESEASES
+   Route::get('animals/{animal}/index/desease', [AnimalController::class, 'animal_desease_index'])
+   ->name('animals.index.desease');
+   Route::get('animals/{animal}/create/desease', [AnimalController::class, 'animal_desease_create'])
+   ->name('animals.create.desease');
+   Route::post('animals/{animal}/store/desease', [AnimalController::class, 'animal_desease_store'])
+   ->name('animals.store.desease');
+   Route::get('animals/{animal}/edit/desease', [AnimalController::class, 'animal_desease_edit'])
+   ->name('animals.edit.desease');
+   Route::put('animals/{animal}/update/desease', [AnimalController::class, 'animal_desease_update'])
+   ->name('animals.update.desease');
+   
+   //ROUTE SEARCH
     Route::get('/search/', [AnimalController::class, 'search'])->name('animals.search');
     
 });

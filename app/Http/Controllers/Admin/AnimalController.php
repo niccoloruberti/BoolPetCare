@@ -9,6 +9,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Vaccination;
 use App\Models\Animal_Vaccination;
+use App\Models\Desease;
+use App\Models\AnimalDesease;
 
 class AnimalController extends Controller
 {
@@ -34,6 +36,15 @@ class AnimalController extends Controller
         return view('admin.animals.animal_vaccine_index', compact('animal_vaccine', 'animal'));
     }
 
+    public function animal_desease_index(Request $request, $animal)
+    {   
+        $id_animal = $request->animal;
+        $animal = Animal::find($id_animal);
+        $animal_desease = Desease::all();
+
+        return view('admin.animals.animal_desease_index', compact('animal_desease', 'animal'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -49,9 +60,16 @@ class AnimalController extends Controller
         $vaccinations= Vaccination::all();
         $id_animal = $request->animal;
         $animal_id= $id_animal->id;
+      
 
         
         return view('admin.animals.animal_vaccine_create', compact('vaccinations','animal'));
+    }
+
+    public function animal_desease_create(Request $request, Animal $animal, Desease $desease)
+    {
+        $deseases = Desease::all();
+        return view('admin.animals.animal_desease_create', compact('deseases','animal', 'desease'));
     }
 
     /**
@@ -63,7 +81,6 @@ class AnimalController extends Controller
     public function store(StoreAnimalRequest $request)
     {
         $form_data = $request->all();
-        
         $animal = new Animal();
         $animal->fill($form_data);
         $animal->save();
@@ -76,10 +93,22 @@ class AnimalController extends Controller
         $animal_vaccine = new Animal_Vaccination;
 
         $form_data['animal_id'] = $animal->id;
+        
         $animal_vaccine->fill($form_data);
         
         $animal_vaccine->save();
         return redirect()->route('admin.animals.index.vaccine', ['animal' => $animal->id]);
+    }
+
+    public function animal_desease_store(Request $request, Animal $animal,Desease $desease)
+    {
+        
+        $form_data=$request->all();
+        $animal_desease = new AnimalDesease;
+        $animal_desease->fill($form_data);
+        $animal_desease->save();
+
+        return redirect()->route('admin.animals.index.desease', ['animal' => $animal->id]);
     }
 
     /**
