@@ -33,12 +33,15 @@
 
             <div class="form-group mt-4">
                <label for="date_of_birth">Date of birth</label>
-               <input type="text" name="date_of_birth" id="date_of_birth" class="form-control"  value="{{ old('date_of_birth') }}" placeholder="Enter Date of birth">
+               <input type="date" name="date_of_birth" id="date_of_birth" class="form-control"  value="{{ old('date_of_birth') }}" placeholder="Enter Date of birth">
             </div>
 
             <div class="form-group mt-4">
                <label for="genre">Genre</label>
-               <input type="text" name="genre" id="genre" class="form-control"  value="{{ old('genre') }}"  placeholder="Enter Genre">
+               <input type="text" name="genre" id="genre" class="form-control @error('genre') is-invalid @enderror"  value="{{ old('genre') }}"  placeholder="Enter Genre">
+               @error('genre')
+                  <div class="text-danger">{{ $message }}</div>
+               @enderror
             </div>
 
             <div class="form-group mt-4">
@@ -50,20 +53,20 @@
             </div>
 
             <div class="form-group mt-4">
-               <label for="owner">Weight</label>
+               <label for="weight">Weight</label>
                <input type="text" name="weight" id="weight" class="form-control"  value="{{ old('weight') }}"  placeholder="Enter Weight">
             </div>
             <div class="form-group mt-4">
-               <label for="owner">Size</label>
-               <input type="text" name="size" id="size" class="form-control"  value="{{ old('size') }}"  placeholder="Enter Size">
+               <label for="size">Size</label>
+               <input type="text" name="size" id="size" class="form-control"  value="{{ old('size') }}"  placeholder="Enter Size" required>
             </div>
             <div class="form-group mt-4">
-               <label for="owner">Image</label>
+               <label for="img_link">Image</label>
                <input type="text" name="img_link" id="img_link" class="form-control"  value="{{ old('img_link') }}"  placeholder="Enter Image link">
             </div>
             <div class="form-group mt-4">
-               <label for="owner">Notes</label>
-               <textarea type="text" name="img_link" id="img_link" class="form-control"  value="{{ old('img_link') }}"  placeholder="Enter Notes"></textarea>
+               <label for="notes">Notes</label>
+               <textarea name="notes" id="notes" class="form-control"  value="{{ old('notes') }}"  placeholder="Enter Notes"></textarea>
             </div>
 
             <div class="form-group my-4 col-12 text-center">
