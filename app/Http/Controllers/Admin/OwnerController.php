@@ -14,4 +14,9 @@ class OwnerController extends Controller
         
         return view('admin.owners.index', compact('owners'));
     }
+
+    public function create()
+    {
+        return view('admin.owners.create');
+    }
 }
