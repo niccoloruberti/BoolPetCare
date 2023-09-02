@@ -37,4 +37,26 @@ class OwnerController extends Controller
         
         return view ('admin.owners.show', compact('owner', 'id_owner'));
     }
+
+    public function edit(Owner $owner)
+    { 
+            return view('admin.owners.edit', compact('owner'));
+        
+    }
+
+    public function update(Request $request, Owner $owner)
+    {
+        $form_data = $request->all();
+
+        $owner->update($form_data);
+
+        return redirect()->route('admin.owners.show', $owner->id);
+    }
+
+    public function destroy(Owner $owner)
+    {   
+        $owner->delete();
+
+        return redirect()->route('admin.owners.index');
+    }
 }
