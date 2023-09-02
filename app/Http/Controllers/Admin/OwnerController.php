@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+
 use App\Models\Owner;
 
 class OwnerController extends Controller
@@ -18,5 +19,22 @@ class OwnerController extends Controller
     public function create()
     {
         return view('admin.owners.create');
+    }
+
+    public function store(Request $request)
+    {
+        $form_data = $request->all();
+        
+        $owner = new Owner();
+        $owner->fill($form_data);
+        $owner->save();
+        return redirect()->route('admin.owners.index');
+    }
+
+    public function show(Owner $owner)
+    {
+        $id_owner = $owner->id;
+        
+        return view ('admin.owners.show', compact('owner', 'id_owner'));
     }
 }

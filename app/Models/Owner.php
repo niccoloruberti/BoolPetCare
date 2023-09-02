@@ -10,6 +10,8 @@ class Owner extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['name', 'surname', 'address', 'phone', 'email'];
+
     public function animals() {
         return $this->hasMany(Animall::class);
     }
