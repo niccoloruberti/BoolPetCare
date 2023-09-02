@@ -25,7 +25,7 @@
                     <tr>
                         <th>{{$animal->name}}</th>
                         <td>{{$animal->specie}}</td>
-                        <td>{{$animal->owner}}</td>
+                        <td>{{($animal->owner) ? $animal->owner->name.' '.$animal->owner->surname : ''}}</td>
                         <td>{{$animal->size}}</td>
 
                         {{-- SHOW BUTTON --}}

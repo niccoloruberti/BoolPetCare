@@ -39,9 +39,11 @@ class AnimalController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        return view('admin.animals.create');
+        $id_owner = array_keys($request->query());
+        $id_owner = reset($id_owner);
+        return view('admin.animals.create', compact('id_owner'));
     }
 
     public function animal_vaccine_create(Request $request,Animal $animal)

@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use app\Model\Animal;
+use App\Models\Animal;
 
 class Owner extends Model
 {
@@ -13,6 +13,6 @@ class Owner extends Model
     protected $fillable = ['name', 'surname', 'address', 'phone', 'email'];
 
     public function animals() {
-        return $this->hasMany(Animall::class);
+        return $this->hasMany(Animal::class);
     }
 }

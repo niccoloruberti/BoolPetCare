@@ -8,7 +8,7 @@
                 <input type="text" name="search" required/>
                 <button class="btn btn-success ms-3" type="submit">Search</button>
             </form> --}}
-            <a class="btn btn-warning" href="{{ route('admin.owners.create')}}">Add owner</a>
+            <a class="btn btn-warning me-2" href="{{ route('admin.owners.create')}}">Add owner</a>
         </div>
         <table class="table table-striped">
             <thead>

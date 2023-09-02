@@ -55,6 +55,12 @@ class OwnerController extends Controller
 
     public function destroy(Owner $owner)
     {   
+        $animals = $owner->animals;
+
+        foreach ($animals as $animal) {
+            $animal->delete();
+        }
+
         $owner->delete();
 
         return redirect()->route('admin.owners.index');

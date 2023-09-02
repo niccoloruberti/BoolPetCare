@@ -4,7 +4,8 @@
     <div class="container">
         <div class="row">
             <div class="my-4 d-flex justify-content-end">
-                <a href="{{route('admin.owners.index')}}" class="btn btn-sm btn-primary">All Owners</a>
+                <a href="{{route('admin.owners.index')}}" class="btn btn-sm btn-primary me-2">All Owners</a>
+                <a href="{{route('admin.animals.create', $owner->id)}}" class="btn btn-sm btn-primary">Add Animal</a>
             </div>
             {{-- libretto vaccinazioni --}}
             <div class="my-4 d-flex justify-content-end">
