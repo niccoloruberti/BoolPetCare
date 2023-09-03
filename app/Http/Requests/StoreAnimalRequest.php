@@ -27,7 +27,7 @@ class StoreAnimalRequest extends FormRequest
             'name' => 'required|max:50',
             'specie' => 'required|max:50',
             'genre' => 'max:1',
-            'owner' => 'required',
+            
             'weight' => 'numeric|nullable',
             'size' => 'required',
             'img_link' => 'url:http,https|nullable',
@@ -46,7 +46,7 @@ class StoreAnimalRequest extends FormRequest
 
             'genre.max' => 'Enter "M" or "F"',
 
-            'owner.required' => 'Owner\'s name and surname are required!',
+            
 
             'weight.numeric' => 'Enter numbers followed by a "." for decimals. (weight will be assigned with Kg)',
 

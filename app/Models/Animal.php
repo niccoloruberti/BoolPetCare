@@ -18,16 +18,15 @@ class Animal extends Model
     public function vaccinations() {
         return $this->belongsToMany(Vaccination::class, 'animal_vaccination')->withPivot('date_injection','dose','booster_date', 'notes');
     }
-<<<<<<< HEAD
 
     public function owner() {
         return $this->belongsTo(Owner::class);
-=======
-    public function deseases(){
-        return $this->belongsToMany(Desease::class, 'animal_desease')->withPivot('diagnosis','notes');
     }
+    public function deseases(){
+    return $this->belongsToMany(Desease::class, 'animal_desease')->withPivot('diagnosis','notes');
+    }
+    
     public function animal_vaccinations() {
         return $this->hasMany(Animal_Vaccination::class);
->>>>>>> animal-desease-history
     }
 }
