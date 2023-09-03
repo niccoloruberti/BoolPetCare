@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container mt-5">
     <h2 class="fs-4  mt-4" style="color:#E04F00 ">
         {{ __('Welcome Back to BoolPetCare!') }}
     </h2>
@@ -48,14 +48,27 @@
             </div>
         </div>
     </div>
-    <div class="row my-5">
-        <div class="col-6">
+    <div class="row my-5 ">
+        <div class="col-6 ">
             <h4 style="color: #00807C"><i class="fa-solid fa-otter fa-2xl"></i> Register Patients</h4>
             <ul class="mt-4 list-unstyled">
                 <li><i class="fa-solid fa-paw" style="color: #00807C"></i> Add new patients</li>
                 <li><i class="fa-solid fa-paw" style="color:#00807C "></i> View and update medical records</li>
                 <li><i class="fa-solid fa-feather" style="color:#00807C "></i> Schedule appointments (coming soon!)</li>
             </ul>
+        </div>
+        <div class="col-6">
+            <h4 style="color: #00807C"><i class="fa-solid fa-shield-cat fa-2xl"></i> Owners Records</h4>
+            <ul class="mt-4 list-unstyled">
+                <li><i class="fa-solid fa-person" style="color: #00807C"></i> Manage client information</li>
+                <li><i class="fa-solid fa-person" style="color:#00807C "></i> Connect with pet owners effortlessly</li>
+                <li><i class="fa-solid fa-person" style="color:#00807C "></i> Improve client satisfaction</li>
+            </ul>
+        </div>
+        <div class="text-center mt-5">
+            <p>
+                Thank you for choosing <strong style="color: #E04F00">BoolPetCare</strong>  to support your veterinary practice. We're here to make your journey smoother, and your patients' lives happier and healthier.
+            </p>
         </div>
     </div>
     
