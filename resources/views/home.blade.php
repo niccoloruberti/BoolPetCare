@@ -17,20 +17,21 @@
             <div class="col-12 col-md-6 descrpition me-5 align-self-center">
                <p> If you're looking for a comprehensive and reliable solution for managing data related to your four-legged patients, you've come to the right place! <span style="color:#E04F00"> BoolPetCare</span> is the veterinary database management system designed to simplify your professional life.</p>
             </div>
-            <div class="col-12 col-md-6 ms-5">
-                <img src="{{asset('/vet-hospital.jpeg')}}" alt="Veterinary Hospital" width="300px">
+            <div class="col-12 col-md-6 justify-content-center  d-flex">
+                <img src="{{asset('/vet-hospital.jpeg')}}" alt="Veterinary Hospital" width="300px" style="border:5px solid #E04F00">
             </div>
         </div>
         <div class=" my-md-5 d-block d-md-flex">
             <div class="col-12 col-md-6 ms-5 align-self-center">
-                <img src="{{asset('/doggo-care.png')}}" alt="Veterinary Hospital" width="300px" height="300px" style="border:4px solid #E04F00">
+                <img src="{{asset('/doggo-care.png')}}" alt="Veterinary Hospital" width="300px" height="300px" style="border:5px solid #943400">
             </div>
             <div class="col-12 col-md-6 descrpition me-5 align-self-center">
                 <h2 style="color:#E04F00" class="mt-5 mt-md-0">What You Can Do with BoolPetCare:</h2>
                 <ul class="mt-4 list-unstyled">
                     <li class="my-2">
-                         <h4>                          <i class="fa-solid fa-paw" style="color: #00e0d9;">
-                        </i>
+                        <h4>
+                            <i class="fa-solid fa-paw" style="color: #00e0d9;">
+                            </i>
                             Register and Monitor Patients:
                         </h4>
                           Keep track of detailed information about your patients, including personal data, owners, medical records, and more.
@@ -84,8 +85,8 @@
             <div class="col-12 col-md-6 descrpition me-5 align-self-center">
                <p> <span style="color:#E04F00">BoolPetCare</span> has been developed by veterinary industry experts for professionals like you. We are dedicated to simplifying your daily work, allowing you to focus on what you love most: caring for animals.</p>
             </div>
-            <div class="col-12 col-md-6 ms-5">
-                <img src="{{asset('/animals.jpg')}}" alt="Veterinary Hospital" width="300px">
+            <div class="col-12 col-md-6 justify-content-center  d-flex"  >
+                <img src="{{asset('/animals.jpg')}}" alt="Veterinary Hospital" width="300px" style="border: 5px solid #00807C">
             </div>
         </div>
     </div>

@@ -20,17 +20,18 @@
 </head>
 
 <body>
+    
     <div id="app">
-
-
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+    <div class="container ">
+        <nav class="navbar navbar-expand-md navbar-light py-4">
             <div class="container">
                 <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
-                    <div class="logo_laravel">
-                        <img src="{{asset('logoBoolPet.png')}}" alt="">
+                    <div class="logo_laravel d-flex ms-5">
+                        <img src="{{asset('/logoBoolPet.png')}}" alt="" width="70px"><h1 class="ms-2 fw-bold" style="color:#E04F00">BoolPetCare</h1>
                     </div>
                     {{-- config('app.name', 'Laravel') --}}
                 </a>
+            </div>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -39,7 +40,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-                        <li class="nav-item">
+                        <li class="nav-item fw-bold">
                             <a class="nav-link" href="{{url('/') }}">{{ __('Home') }}</a>
                         </li>
                     </ul>
@@ -80,6 +81,8 @@
                 </div>
             </div>
         </nav>
+        
+    </div>
 
         <main class="">
             @yield('content')

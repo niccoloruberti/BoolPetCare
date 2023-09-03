@@ -2,29 +2,62 @@
 
 @section('content')
 <div class="container">
-    <h2 class="fs-4 text-secondary my-4">
-        {{ __('Dashboard') }}
+    <h2 class="fs-4  mt-4" style="color:#E04F00 ">
+        {{ __('Welcome Back to BoolPetCare!') }}
     </h2>
+    <p>
+        We're delighted to see you return to BoolPetCare, your trusted veterinary practice management platform.
+    </p>
+    <div>
+       <h3 class="fs-4  mt-5" style="color:#E04F00 "> Ready to Get Started?</h3>
+        
+    </div>
     <div class="row justify-content-center">
         <div class="col">
-            <div class="card">
-                <div class="card-header">{{ __('User Dashboard') }}</div>
+            <div class="card mt-3">
+                <div class="card-header text-white fw-bold" style="background-color: #00807C">{{ __('Explore our features and make the most of your veterinary practice:') }}</div>
 
                 <div class="card-body">
-                    @if (session('status'))
-                    <div class="alert alert-success" role="alert">
-                        {{ session('status') }}
+                    <div class="d-flex flex-column">
+                        <div class="d-flex align-items-center">
+                            <div class="mt-3 mb-5 col-4" >
+                                <i class="fa-solid fa-paw fw-bold mx-2 fa-xl" style="color: #00e0d9;"></i>
+                                <a href="{{route('admin.animals.index')}}" style="background-color: #E04F00" class="btn  btn-md  text-white fw-bold button-link">Patient Registry</a>
+                            </div>
+                            <div class="col-8">
+                                <p>
+                                    Add and manage your furry patients with ease. Keep their medical histories up-to-date and never miss an appointment.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <div class="mt-3 mb-5 col-4" >
+                                <i class="fa-solid fa-person fw-bold mx-2 fa-xl" style="color: #00e0d9;"></i>
+                                <a href="{{route('admin.owners.index')}}"  style="background-color: #E04F00" class="btn  btn-md text-white fw-bold button-link">Owners Record</a>
+                            </div>
+                            <div class="col-8">
+                                <p>
+                                    Maintain essential information about your clients and their beloved pets. Seamless communication is just a click away.
+                                </p>
+                            </div>
+                        </div>
+                       
                     </div>
-                    @endif
 
-                    {{ __('You are logged in!') }}
                 </div>
             </div>
         </div>
     </div>
-    <div class="col-12 d-flex justify-content-center my-5">
-        <a href="{{route('admin.animals.index')}}" class="btn btn-primary btn-md me-2">Animals list</a>
-        <a href="{{route('admin.owners.index')}}" class="btn btn-primary btn-md">Owners list</a>
+    <div class="row my-5">
+        <div class="col-6">
+            <h4 style="color: #00807C"><i class="fa-solid fa-otter fa-2xl"></i> Register Patients</h4>
+            <ul class="mt-4 list-unstyled">
+                <li><i class="fa-solid fa-paw" style="color: #00807C"></i> Add new patients</li>
+                <li><i class="fa-solid fa-paw" style="color:#00807C "></i> View and update medical records</li>
+                <li><i class="fa-solid fa-feather" style="color:#00807C "></i> Schedule appointments (coming soon!)</li>
+            </ul>
+        </div>
     </div>
+    
 </div>
 @endsection
