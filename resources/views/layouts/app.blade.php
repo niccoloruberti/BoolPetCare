@@ -19,7 +19,7 @@
     @vite(['resources/js/app.js'])
 </head>
 
-<body>
+<body >
     <div id="app">
 
 
@@ -85,9 +85,14 @@
             </div>
         </nav>
 
-        <main class="">
+        <main style="min-height: 85vh">
             @yield('content')
         </main>
+        <footer class="bg-dark text-white text-center py-3">
+            <div class="container">
+                <p>&copy; 2023 BoolPetCare. Tutti i diritti riservati.</p>
+            </div>
+        </footer>
     </div>
 </body>
 
