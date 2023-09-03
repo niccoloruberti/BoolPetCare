@@ -73,7 +73,14 @@
             {{-- SIZE --}}
             <div class="form-group mt-4">
                <label class="mb-2" for="size">Size</label>
-               <input type="text" name="size" id="size" class="form-control"  value="{{ old('size') }}"  placeholder="Enter Size" oninput="this.value = this.value.toUpperCase()" required>
+               <select name="size" id="size" class="form-control @error('size') is-invalid @enderror" required>
+                  <option value="S" {{ (old('size') == 'S') ? 'selected' : '' }}>S</option>
+                  <option value="M" {{ (old('size') == 'M') ? 'selected' : '' }}>M</option>
+                  <option value="L" {{ (old('size') == 'L') ? 'selected' : '' }}>L</option>
+               </select>
+               @error('size')
+                  <div class="text-danger">{{ $message }}</div>
+               @enderror
             </div>
 
             {{-- IMAGE --}}

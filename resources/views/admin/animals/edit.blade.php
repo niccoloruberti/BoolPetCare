@@ -75,7 +75,14 @@
                     {{-- SIZE --}}
                     <div class="form-group my-4">
                         <label class="control-label mb-2">Size</label>
-                        <input type="text" id="size" name="size" class="form-control" value="{{old('size') ?? $animal->size}}" placeholder="Enter Size" oninput="this.value = this.value.toUpperCase()" required>
+                        <select class="form-control" name="size">
+                            <option value="S" {{ (old('size') ?? $animal->size) === 'S' ? 'selected' : '' }}>S</option>
+                            <option value="M" {{ (old('size') ?? $animal->size) === 'M' ? 'selected' : '' }}>M</option>
+                            <option value="L" {{ (old('size') ?? $animal->size) === 'L' ? 'selected' : '' }}>L</option>
+                        </select>
+                        @error('size')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
                     </div>
 
                     {{-- IMAGE --}}
