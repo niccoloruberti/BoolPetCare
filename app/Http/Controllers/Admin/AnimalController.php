@@ -141,6 +141,8 @@ class AnimalController extends Controller
         $vaccinations= Vaccination::all();
         $id_animal = $request->animal;
         $animal_id= $id_animal->id;
+        $animal = Animal::find($animal_id);
+        $animal_vaccination = $animal->animal_vaccinations->first();
         
         return view('admin.animals.animal_vaccine_edit', compact('animal', 'vaccinations','animal_vaccination'));
     }
@@ -167,16 +169,26 @@ class AnimalController extends Controller
         return redirect()->route('admin.animals.show', $animal->id);
     }
 
-    // public function animal_vaccine_update(Request $request, Animal $animal, Animal_Vaccination $animal_vaccination)
-    // {
-    //      $form_data= $request->all();
-    //      $animal_vaccination = Animal_Vaccination::find($animal_vaccination->id);
-         
+    public function animal_vaccine_update(Request $request, Animal $animal, Animal_Vaccination $animal_vaccination)
+    {
+        // $form_data= $request->all();
+        // $animal_id = $form_data['animal_id'];
+        // $animal = Animal::find($animal_id);
+        // $animal_vaccination = $animal->animal_vaccinations;
+    
+        // $specific_animal_vaccination = Animal_Vaccination::find($animal_vaccination->id);
+        // dd($specific_animal_vaccination);
                 
-    //      $animal_vaccination->update($form_data);
+        // $animal_vaccination->update($form_data);
+
+        $form_data = $request->all();
         
-    //     return redirect()->route('admin.animals.index.vaccine', ['animal' => $animal->id]);
-    // }
+        $animal_vaccination->update($form_data);
+
+
+        
+        return redirect()->route('admin.animals.index.vaccine', ['animal' => $animal->id]);
+    }
 
     public function animal_desease_update(Request $request, Animal $animal, AnimalDesease $animal_desease, Desease $desease)
     {

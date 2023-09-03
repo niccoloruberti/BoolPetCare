@@ -35,7 +35,7 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(
     ->name('animals.store.vaccine');
     Route::get('animals/{animal}/edit/vaccine', [AnimalController::class, 'animal_vaccine_edit'])
     ->name('animals.edit.vaccine');
-    Route::put('animals/{animal}/update/vaccine', [AnimalController::class, 'animal_vaccine_update'])
+    Route::put('animals/{animal}/update/vaccine/{animal_vaccination}', [AnimalController::class, 'animal_vaccine_update'])
     ->name('animals.update.vaccine');
     Route::delete('animals/{animal}/destroy/vaccine', [AnimalController::class, 'animal_vaccine_destroy'])
     ->name('animals.destroy.vaccine');

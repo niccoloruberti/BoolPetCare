@@ -20,4 +20,7 @@ class Animal extends Model
     public function deseases(){
         return $this->belongsToMany(Desease::class, 'animal_desease')->withPivot('diagnosis','notes');
     }
+    public function animal_vaccinations() {
+        return $this->hasMany(Animal_Vaccination::class);
+    }
 }

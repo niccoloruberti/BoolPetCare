@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="col-7 offset-1">
-        <form action="{{route('admin.animals.update.vaccine', ['animal'=>$animal])}}" method="POST">
+        <form action="{{ route('admin.animals.update.vaccine', ['animal' => $animal, 'animal_vaccination' => $animal_vaccination]) }}" method="POST">
             @method('PUT')
             @csrf
             <input type="date" name="date_injection" id="date_injection" value="">
