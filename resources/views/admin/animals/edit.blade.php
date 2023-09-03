@@ -52,13 +52,13 @@
                     </div>
 
                     {{-- OWNER --}}
-                    <div class="form-group my-4">
+                    {{-- <div class="form-group my-4">
                         <label class="control-label mb-2">Owner</label>
                         <input type="text" id="owner" name="owner" class="form-control @error('owner') is-invalid @enderror" value="{{old('owner') ?? $animal->owner}}" placeholder="Enter Owner's name and surname" required>
                         @error('owner')
                             <div class="text-danger">{{ $message }}</div>
                         @enderror
-                    </div>
+                    </div> --}}
 
                     {{-- WEIGHT --}}
                     <div class="form-group my-4">

@@ -16,7 +16,7 @@
                     <div>
                         
                         <h3>Animal's Name: {{$animal->name}}</h3>
-                        <h3>Owner: {{$animal->owner}}</h3>
+                        <h3>Owner: {{($animal->owner) ? $animal->owner->name.' '.$animal->owner->surname : ''}}</h3>
                         <h4>Specie: {{$animal->specie}}</h4>
                         <h6>Date of birth: {{$animal->date_of_birth}}</h6>
                         <h6>Genre: {{$animal->genre}}</h6>

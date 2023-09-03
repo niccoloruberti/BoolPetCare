@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\DashboardController as DashBoardController;
 use App\Http\Controllers\Admin\AnimalController as AnimalController;
+use App\Http\Controllers\Admin\OwnerController as OwnerController;
 use App\Http\Controllers\Admin\AnimalVaccinationController as AnimalVaccinationController;
 use Illuminate\Http\Request;
 
@@ -27,6 +28,7 @@ Route::get('/', function () {
 Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(function () {
     Route::get('/', [DashboardController::class,'index'])->name('dashboard');
     Route::resource('animals', AnimalController::class);
+    Route::resource('owners', OwnerController::class);
     //Route::resource('animal_vaccination', AnimalVaccinationController::class);
     Route::get('animals/{animal}/index/vaccine', [AnimalController::class, 'animal_vaccine_index'])
     ->name('animals.index.vaccine');

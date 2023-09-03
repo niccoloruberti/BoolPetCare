@@ -15,8 +15,9 @@
        <div class="col-12">
           <form action="{{ route('admin.animals.store') }}" method="POST">
             @csrf
+            {{-- id del proprietario --}}
+            <input type="hidden" name="owner_id" id="owner_id" class="form-control"  value="{{ $id_owner }}">
 
-            {{-- NAME --}}
             <div class="form-group mt-4">
                <label class="mb-2" for="name">Name</label>
                <input type="text" name="name" id="name" class="form-control @error('name') is-invalid @enderror"  value="{{ old('name') }}" placeholder="Enter Name" autofocus required>
@@ -45,15 +46,6 @@
                <label class="mb-2" for="genre">Genre</label>
                <input type="text" name="genre" id="genre" class="form-control @error('genre') is-invalid @enderror"  value="{{ old('genre') }}" placeholder="Enter Genre" oninput="this.value = this.value.toUpperCase()">
                @error('genre')
-                  <div class="text-danger">{{ $message }}</div>
-               @enderror
-            </div>
-
-            {{-- OWNER --}}
-            <div class="form-group mt-4">
-               <label class="mb-2" for="owner">Owner</label>
-               <input type="text" name="owner" id="owner" class="form-control @error('owner') is-invalid @enderror"  value="{{ old('owner') }}" placeholder="Enter Owner's name and surname" required>
-               @error('owner')
                   <div class="text-danger">{{ $message }}</div>
                @enderror
             </div>

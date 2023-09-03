@@ -1,0 +1,51 @@
+@extends('layouts.admin')
+
+@section('content')
+<div class="container">
+   <div class="row">
+       <div class="col-12 my-5">
+           <h1 class="">Add new owner</h1>
+           <div class="col-12 text-end">
+              <div class="">
+                  <a href="{{ route('admin.owners.index') }}" class="btn btn-primary">All Owners</a>
+              </div>
+           </div>
+       </div>
+        
+       <div class="col-12">
+          <form action="{{ route('admin.owners.update', $owner->id) }}" method="POST">
+            @csrf
+            @method('PUT')
+            {{-- nome --}}
+            <div class="form-group mt-4">
+               <label for="name">Name</label>
+               <input type="text" name="name" id="name" class="form-control"  value="{{ old('name') ? old('name') : $owner->name }}" required>
+            </div>
+            {{-- cognome --}}
+            <div class="form-group mt-4">
+                <label for="name">Surname</label>
+                <input type="text" name="surname" id="surname" class="form-control"  value="{{ old('surname') ? old('surname') : $owner->surname }}" required>
+            </div>
+            {{-- indirizzo --}}
+            <div class="form-group mt-4">
+                <label for="name">Address</label>
+                <input type="text" name="address" id="address" class="form-control"  value="{{ old('address') ? old('address') : $owner->address }}" required>
+            </div>
+            {{-- telefono --}}
+            <div class="form-group mt-4">
+                <label for="name">Phone</label>
+                <input type="text" name="phone" id="phone" class="form-control"  value="{{ old('phone') ? old('phone') : $owner->phone}}" required>
+            </div>
+            {{-- email --}}
+            <div class="form-group mt-4">
+                <label for="name">Email</label>
+                <input type="mail" name="email" id="email" class="form-control"  value="{{ old('email') ? old('email') : $owner->email }}" required>
+             </div>
+            <div class="form-group my-4 col-12 text-center">
+                <button type="submit" class="btn btn-success">Save</button>
+            </div>
+        </form>
+       </div>
+   </div>
+</div>
+@endsection
