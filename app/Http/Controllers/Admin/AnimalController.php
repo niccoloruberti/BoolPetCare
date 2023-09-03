@@ -150,7 +150,12 @@ class AnimalController extends Controller
     public function animal_desease_edit(Animal $animal, Request $request, AnimalDesease $animal_desease)
     {
         $deseases = Desease::all();
-        return view('admin.animals.animal_desease_edit', compact('animal','deseases'));
+        
+        $id_animal = $request->animal;
+        $animal_id= $id_animal->id;
+        $animal = Animal::find($animal_id);
+      
+        return view('admin.animals.animal_desease_edit', compact('animal','deseases','animal_desease'));
     }
 
     /**
@@ -194,8 +199,9 @@ class AnimalController extends Controller
     {
        
         $form_data=$request->all();
-        dd($form_data);
-   
+        $animal_desease->update($form_data);
+        
+        return redirect()->route('admin.animals.index.vaccine', ['animal' => $animal->id]);
     }
 
     /**

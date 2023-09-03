@@ -11,6 +11,8 @@
                 <th scope="col">Date of Injection</th>
                 <th scope="col">Dose</th>
                 <th scope="col">Date of Booster</th>
+                <th scope="col">Edit Vaccination</th>
+                <th scope="col">Delete Vaccination</th>
             </tr>
         </thead>
         <tbody>
