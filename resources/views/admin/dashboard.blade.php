@@ -32,8 +32,8 @@
                         </div>
                         <div class="d-flex align-items-center">
                             <div class="mt-3 mb-5 col-4" >
-                                <i class="fa-solid fa-person fw-bold mx-2 fa-xl" style="color: #00e0d9;"></i>
-                                <a href="{{route('admin.owners.index')}}"  style="background-color: #E04F00" class="btn  btn-md text-white fw-bold button-link">Owners Record</a>
+                                <i class="fa-solid fa-person fw-bold ms-3 me-2 fa-xl" style="color: #00e0d9;"></i>
+                                <a href="{{route('admin.owners.index')}}"  style="background-color: #E04F00" class="btn  btn-md text-white fw-bold button-link pe-3">Owners Record</a>
                             </div>
                             <div class="col-8">
                                 <p>
