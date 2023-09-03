@@ -38,10 +38,26 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(
     ->name('animals.store.vaccine');
     Route::get('animals/{animal}/edit/vaccine', [AnimalController::class, 'animal_vaccine_edit'])
     ->name('animals.edit.vaccine');
-    Route::put('animals/{animal}/update/vaccine', [AnimalController::class, 'animal_vaccine_update'])
+    Route::put('animals/{animal}/update/vaccine/{animal_vaccination}', [AnimalController::class, 'animal_vaccine_update'])
     ->name('animals.update.vaccine');
     Route::delete('animals/{animal}/destroy/vaccine', [AnimalController::class, 'animal_vaccine_destroy'])
     ->name('animals.destroy.vaccine');
+   
+    //ROUTE ANIMAL_DESEASES
+   Route::get('animals/{animal}/index/desease', [AnimalController::class, 'animal_desease_index'])
+   ->name('animals.index.desease');
+   Route::get('animals/{animal}/create/desease', [AnimalController::class, 'animal_desease_create'])
+   ->name('animals.create.desease');
+   Route::post('animals/{animal}/store/desease', [AnimalController::class, 'animal_desease_store'])
+   ->name('animals.store.desease');
+   Route::get('animals/{animal}/edit/desease', [AnimalController::class, 'animal_desease_edit'])
+   ->name('animals.edit.desease');
+   Route::put('animals/{animal}/update/desease', [AnimalController::class, 'animal_desease_update'])
+   ->name('animals.update.desease');
+    Route::delete('animals/{animal}/destroy/desease', [AnimalController::class, 'animal_desease_destroy'])
+    ->name('animals.destroy.desease');
+   
+   //ROUTE SEARCH
     Route::get('/search/', [AnimalController::class, 'search'])->name('animals.search');
     
 });
