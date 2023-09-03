@@ -11,7 +11,7 @@ use App\Models\Vaccination;
 use App\Models\Animal_Vaccination;
 use App\Models\Desease;
 use App\Models\AnimalDesease;
-
+use App\Models\Owner;
 class AnimalController extends Controller
 {
     /**
@@ -237,13 +237,15 @@ class AnimalController extends Controller
         // Search in the title and body columns from the posts table
         $animals = Animal::query()
             ->where('name', 'LIKE', "%{$search}%")
-            ->orWhere('owner', 'LIKE', "%{$search}%")
+            
             ->orWhere('specie', 'LIKE', "%{$search}%")
             ->get();
 
-
+        $owner= Owner::query()
+        ->orWhere('name', 'LIKE', "%{$search}%")
+        ->get();
 
         // Return the search view with the resluts compacted
-        return view('admin.animals.search', compact('animals'));
+        return view('admin.animals.search', compact('animals', 'owner'));
     }
 }
