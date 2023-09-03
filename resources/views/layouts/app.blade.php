@@ -27,7 +27,7 @@
             <div class="container">
                 <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
                     <div class="logo_laravel d-flex ms-5">
-                        <img src="{{asset('/logoBoolPet.png')}}" alt="" width="70px"><h1 class="ms-2 fw-bold" style="color:#E04B00">BoolPetCare</h1>
+                        <img src="{{asset('/logoBoolPet.png')}}" alt="" width="70px"><h1 class="ms-2 fw-bold" style="color:#E04F00">BoolPetCare</h1>
                     </div>
                     {{-- config('app.name', 'Laravel') --}}
                 </a>
