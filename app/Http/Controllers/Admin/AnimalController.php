@@ -214,8 +214,10 @@ class AnimalController extends Controller
      * @param  \App\Models\Animal  $animal
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Animal $animal)
-    {
+    public function destroy(Animal $animal, AnimalDesease $animal_desease)
+    {   
+        $animal->deseases()->detach();
+        
         $animal->vaccinations()->detach();
         $animal->delete();
 
