@@ -49,7 +49,7 @@
 
             {{-- GENRE --}}
                <div class="d-flex align-items-center">
-                   <label class="mb-2" for="genre">Genre</label>
+                <label class="control-label mb-2 fw-bold me-3">Genre:</label>
                    <select name="genre" id="genre" class="form-control @error('genre') is-invalid @enderror">
                       <option value="" {{ (old('genre') == '') ? 'selected' : '' }}>Choose genre...</option>
                       <option value="M" {{ (old('genre') == 'M') ? 'selected' : '' }}>M</option>
@@ -70,33 +70,34 @@
                </div>
 
                <div class="d-flex align-items-center">
-                   <label class="control-label mb-2 me-3 fw-bold">Size</label>
-                   <select class="form-control" name="size">
+                    <label class="control-label mb-2 me-3 fw-bold">Size</label>
+                    <select class="form-control" name="size" required>
+                        <option value="" {{ old('size') === '' ? 'selected' : '' }}>...</option>
                        <option value="S" {{ (old('size')) === 'S' ? 'selected' : '' }}>S</option>
                        <option value="M" {{ (old('size')) === 'M' ? 'selected' : '' }}>M</option>
                        <option value="L" {{ (old('size')) === 'L' ? 'selected' : '' }}>L</option>
-                   </select>
-                   @error('size')
-                       <div class="text-danger">{{ $message }}</div>
-                   @enderror
-               </div>
-           </div>
+                    </select>
+                    @error('size')
+                       <div class=" fw-bold text-danger">{{ $message }}</div>
+                    @enderror
+                </div>
+            </div>
             {{-- SIZE --}}
 
            {{-- IMAGE --}}
-           <div class="form-group my-4">
+            <div class="form-group my-4">
                <label class="control-label mb-2 fw-bold">Image:</label>
                <input type="url" id="img_link" name="img_link" class="form-control @error('img_link') is-invalid @enderror" value="{{old('img_link') }}" placeholder="Enter Image link">
                @error('img_link')
                    <div class="text-danger">{{ $message }}</div>
                @enderror
-           </div>
+            </div>
 
            {{-- NOTES --}}
-           <div class="form-group my-4">
+            <div class="form-group my-4">
                <label class="control-label mb-2 fw-bold">Notes:</label>
                <textarea name="notes" id="notes" cols="30" rows="5" class="form-control" placeholder="Enter Notes">{{old('notes')}}</textarea>
-           </div>
+            </div>
            
            <div class=" form-group my-4 text-center">
                <button type="submit" class="btn edit-button"> Save</button>
