@@ -12,10 +12,10 @@
                     @endforeach
                 </select>
                 <div class="col-12">
-                    <textarea  name="diagnosis" id="diagnosis"></textarea>
+                    <textarea  name="diagnosis" id="diagnosis" placeholder="Diagnosis"></textarea>
                 </div>
                 <div class="col-12 my-3">
-                    <textarea  name="notes" id="notes"></textarea>
+                    <textarea  name="notes" id="notes" placeholder="Notes"></textarea>
                 </div>
                 
                 <input type="hidden" name="animal_id" value="{{ $animal->id}}">
