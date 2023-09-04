@@ -89,6 +89,7 @@ class AnimalController extends Controller
 
         $animal = new Animal();
         $animal->fill($form_data);
+        $animal->specie_id = $request->input('specie_id');
         $animal->save();
         return redirect()->route('admin.animals.show', $animal->id);
     }
@@ -125,9 +126,10 @@ class AnimalController extends Controller
      */
     public function show(Animal $animal)
     {
+        $species = Specie::all();
         $id_animal = $animal->id;
 
-        return view('admin.animals.show', compact('animal', 'id_animal'));
+        return view('admin.animals.show', compact('animal', 'id_animal', 'species'));
     }
 
     /**
@@ -138,6 +140,7 @@ class AnimalController extends Controller
      */
     public function edit(Animal $animal)
     {
+        $species = Specie::all();
         return view('admin.animals.edit', compact('animal', 'species'));
     }
 

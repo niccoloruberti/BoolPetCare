@@ -26,7 +26,8 @@
                         <h6>Genre: {{$animal->genre}}</h6>
                         <h6>Weight: {{$animal->weight}} kg</h6>
                         <h6>Size: {{$animal->size}}</h6>
-
+                        <h4>Specie: {{$animal->species ? $animal->species->name : 'Nessuna categoria selezionata'}}</h4>
+                        
                     </div>
                 </div>
                 <div>

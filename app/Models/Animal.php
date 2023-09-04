@@ -3,7 +3,7 @@
 namespace App\Models;
 use App\Models\Vaccination;
 use App\Models\Desease;
-
+use App\Models\Specie;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Owner;
@@ -30,7 +30,7 @@ class Animal extends Model
         return $this->hasMany(Animal_Vaccination::class);
     }
 
-    public function specie(){
-        return $this->belongTo(Specie::class);
+    public function species(){
+        return $this->belongsTo(Specie::class, 'specie_id');
     }
 }
