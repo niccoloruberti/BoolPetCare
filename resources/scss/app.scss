@@ -1,6 +1,11 @@
 @import '~bootstrap/scss/bootstrap';
 @import '/node_modules/@fortawesome/fontawesome-free/css/all.min.css';
 
+.button-link {
+    background-color: #32b1ac;
+    font-weight: bold;
+    color: whitesmoke;
+}
 
 .button-link:hover {
     background-color: #00807C !important;

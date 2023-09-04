@@ -6,9 +6,11 @@
         <div class="col-12">
             <a href="{{route('admin.dashboard')}}" class="btn btn-md back-button"><i class="fa-regular fa-circle-left fa-l me-2" style="color: #ad4e1a;"></i>Dashboard</a>
         </div>
-        
         <div class="col-12 my-5 d-flex justify-content-between">
             <div class="col-12 col-md-6">
+                <div class="mb-2 ">
+                    <span>Search by <span style="color: #ad4e1a" class="fw-bold">owner</span> or <span style="color: #1f615f" class="fw-bold">pet</span> name:</span>
+                </div>
                 <div class="input-group md-form form-sm form-1 pl-0">
                     <form action="{{ route('admin.animals.search') }}" method="GET">
                         <div class="input-group-prepend d-flex">
@@ -18,13 +20,16 @@
                                 aria-hidden="true" ></i></span >
                             <input class="form-control my-0 py-1" type="text" placeholder="Search" aria-label="Search"  name="search" required>
                             
-                            <button class="btn ms-5 text-white fw-bold button-link d-flex align-items-center" style="background-color:#32b1ac" type="submit"><i class="fa-solid fa-magnifying-glass-arrow-right me-2" style="color: white"></i> Search</button>
+                            <button class="btn ms-5  button-link d-flex align-items-center" type="submit"><i class="fa-solid fa-magnifying-glass-arrow-right me-2" style="color: white"></i> Search</button>
                         </div>
                     </form>
                     </div>
                
             </div>
-            <a class="btn text-white fw-bold add-button " style="background-color: #E04F00" href="{{ route('admin.animals.create')}}"><i class="fa-solid fa-circle-plus me-2" style="color: #ffffff;"></i>Add New Pet</a>
+            <div class="align-self-center">
+
+                <a class="btn text-white fw-bold add-button " style="background-color: #E04F00" href="{{ route('admin.animals.create')}}"><i class="fa-solid fa-circle-plus me-2" style="color: #ffffff;"></i>Add New Pet</a>
+            </div>
         </div>
         <table class="table table-hover" >
             <thead class="mt-4 text-center">
