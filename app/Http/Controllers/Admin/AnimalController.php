@@ -180,12 +180,12 @@ class AnimalController extends Controller
 
     public function animal_vaccine_update(Request $request, Animal $animal, Animal_Vaccination $animal_vaccination)
     {
-        // $form_data= $request->all();
+         //$form_data= $request->all();
         // $animal_id = $form_data['animal_id'];
         // $animal = Animal::find($animal_id);
         // $animal_vaccination = $animal->animal_vaccinations;
-    
-        // $specific_animal_vaccination = Animal_Vaccination::find($animal_vaccination->id);
+        //dd($animal_vaccination);
+        //$specific_animal_vaccination = Animal_Vaccination::find($animal_vaccination->id);
         // dd($specific_animal_vaccination);
                 
         // $animal_vaccination->update($form_data);

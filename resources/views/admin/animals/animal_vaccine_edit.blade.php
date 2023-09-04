@@ -35,7 +35,6 @@
                 </select>
             </div>
             <div class="text-center">
-
                 <button class="btn edit-button" type="submit">Edit Vaccination</button>
             </div>
         </form>

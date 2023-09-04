@@ -15,7 +15,7 @@
         </div>
     </div>
 
-    <table class="table">
+    <table class="table table-hover">
         <thead class="text-center">
             <tr>
                 <th scope="col">Vaccine's Name</th>
