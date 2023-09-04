@@ -3,7 +3,11 @@
 @section('content')
 
 <div class="container">
+    <div class="my-4 d-flex justify-content-start">
+        <a href="{{route('admin.animals.index')}}" class="btn btn-sm back-button"><i class="fa-regular fa-circle-left fa-l me-2" style="color: #ad4e1a;"></i>All Animals</a>
+    </div>
     <div class="row justify-content-between my-4">
+<<<<<<< HEAD
         <div class="col my-4">
             <h2 class="text-uppercase">Edit Animal</h2>
         </div>
@@ -11,7 +15,12 @@
             <div class="text-end">
                 <a href="{{route('admin.animals.index')}}" class="btn btn-primary">Home</a>
             </div>
+=======
+        <div class="col my-4 text-center">
+            <h2 class="">Modify <span style="color: #1f615f">Pet</span><i class="fas fa-paw ms-2 " style="color: #1f615f"></i> Record</h2>
+>>>>>>> origin/style-brench
         </div>
+       
         <div class="row">
             <div class="col-12 mt-2">
                 <form action="{{route('admin.animals.update', $animal->id)}}" method="POST">
@@ -19,29 +28,36 @@
                     @method('PUT')
 
                     {{-- NAME --}}
-                    <div class="form-group">
-                        <label class="control-label mb-2">Name</label>
-                        <input type="text" id="name" name="name" class="form-control @error('name') is-invalid @enderror" value="{{old('name') ?? $animal->name}}" placeholder="Enter Name" autofocus required>
-                        @error('name')
-                            <div class="text-danger">{{ $message }}</div>
-                        @enderror
+                    <div class="form-group d-flex justify-content-around"> 
+                        <div class="d-flex me-3">
+                            <label class="control-label fw-bold mb-2 me-2" for="name">Name: </label>
+                            <input type="text" id="name" name="name" class="form-control @error('name') is-invalid @enderror" value="{{old('name') ?? $animal->name}}" placeholder="Enter Name" autofocus required>
+                            @error('name')
+                                <div class="text-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+                        <div class="d-flex me-3">
+                            <label class="control-label mb-2 fw-bold me-2">Specie: </label>
+                            <input type="text" id="specie" name="specie" class="form-control @error('specie') is-invalid @enderror" value="{{old('specie') ?? $animal->specie}}" placeholder="Enter Specie" required>
+                            @error('specie')
+                                <div class="text-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+                   
                     </div>
 
                     {{-- SPECIE --}}
-                    <div class="form-group my-4">
-                        <label class="control-label mb-2">Specie</label>
-                        <input type="text" id="specie" name="specie" class="form-control @error('specie') is-invalid @enderror" value="{{old('specie') ?? $animal->specie}}" placeholder="Enter Specie" required>
-                        @error('specie')
-                            <div class="text-danger">{{ $message }}</div>
-                        @enderror
-                    </div>
+                    
 
                     {{-- DATE OF BIRTH --}}
-                    <div class="form-group my-4">
-                        <label class="control-label mb-2">Date of birth</label>
-                        <input type="date" id="date_of_birth" name="date_of_birth" class="form-control" value="{{old('date_of_birth') ?? $animal->date_of_birth}}" placeholder="Enter Date of birth">
-                    </div>
+                    <div class="form-group my-4 d-flex justify-content-around my-5">
+                        <div class="d-flex align-items-center">
+                            <label class="control-label mb-2 fw-bold me-3">Birth:</label>
+                            <input type="date" id="date_of_birth" name="date_of_birth" class="form-control" value="{{old('date_of_birth') ?? $animal->date_of_birth}}" placeholder="Enter Date of birth">
+                        </div>
+                   
 
+<<<<<<< HEAD
                    {{-- GENRE --}}
                     <div class="form-group my-4">
                         <label class="control-label mb-2" for="genre">Genre</label>
@@ -63,16 +79,34 @@
                             <div class="text-danger">{{ $message }}</div>
                         @enderror
                     </div> --}}
+=======
+                    {{-- GENRE --}}
+                        <div class="d-flex align-items-center">
+                            <label class="control-label mb-2 me-3 fw-bold">Genre: </label>
+                            <input type="text" id="genre" name="genre" class="form-control @error('genre') is-invalid @enderror" value="{{old('genre') ?? $animal->genre}}" placeholder="Enter Genre" oninput="this.value = this.value.toUpperCase()">
+                            @error('genre')
+                                <div class="text-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+>>>>>>> origin/style-brench
 
                     {{-- WEIGHT --}}
-                    <div class="form-group my-4">
-                        <label class="control-label mb-2">Weight</label>
-                        <input type="number" min="0" max="100" step=".1" id="weight" name="weight" class="form-control @error('weight') is-invalid @enderror" value="{{old('weight') ?? $animal->weight}}" placeholder="Enter Weight">
-                        @error('weight')
-                            <div class="text-danger">{{ $message }}</div>
-                        @enderror
+                        <div class="d-flex align-items-center">
+                            <label class="control-label mb-2 me-3 fw-bold">Weight:</label>
+                            <input type="number" min="0" max="100" step=".1" id="weight" name="weight" class="form-control @error('weight') is-invalid @enderror" value="{{old('weight') ?? $animal->weight}}" placeholder="Enter Weight">
+                            @error('weight')
+                                <div class="text-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+
+                        {{-- SIZE --}}
+                        <div class="d-flex align-items-center">
+                            <label class="control-label mb-2 me-3 fw-bold">Size:</label>
+                            <input type="text" id="size" name="size" class="form-control" value="{{old('size') ?? $animal->size}}" placeholder="Enter Size" oninput="this.value = this.value.toUpperCase()" required>
+                        </div>
                     </div>
 
+<<<<<<< HEAD
                     {{-- SIZE --}}
                     <div class="form-group my-4">
                         <label class="control-label mb-2">Size</label>
@@ -85,10 +119,12 @@
                             <div class="text-danger">{{ $message }}</div>
                         @enderror
                     </div>
+=======
+>>>>>>> origin/style-brench
 
                     {{-- IMAGE --}}
                     <div class="form-group my-4">
-                        <label class="control-label mb-2">Image</label>
+                        <label class="control-label mb-2 fw-bold">Image:</label>
                         <input type="url" id="img_link" name="img_link" class="form-control @error('img_link') is-invalid @enderror" value="{{old('img_link') ?? $animal->img_link}}" placeholder="Enter Image link">
                         @error('img_link')
                             <div class="text-danger">{{ $message }}</div>
@@ -97,12 +133,12 @@
 
                     {{-- NOTES --}}
                     <div class="form-group my-4">
-                        <label class="control-label mb-2">Notes</label>
+                        <label class="control-label mb-2 fw-bold">Notes:</label>
                         <textarea name="notes" id="notes" cols="30" rows="5" class="form-control" placeholder="Enter Notes">{{old('notes') ?? $animal->notes}}</textarea>
                     </div>
                     
-                    <div class=" form-group my-4">
-                        <button type="submit" class="btn btn-success"> Save</button>
+                    <div class=" form-group my-4 text-center">
+                        <button type="submit" class="btn edit-button"> Save</button>
                     </div>
                 </form>
             </div>

@@ -11,7 +11,7 @@ use App\Models\Vaccination;
 use App\Models\Animal_Vaccination;
 use App\Models\Desease;
 use App\Models\AnimalDesease;
-
+use App\Models\Owner;
 class AnimalController extends Controller
 {
     /**
@@ -180,12 +180,12 @@ class AnimalController extends Controller
 
     public function animal_vaccine_update(Request $request, Animal $animal, Animal_Vaccination $animal_vaccination)
     {
-        // $form_data= $request->all();
+         //$form_data= $request->all();
         // $animal_id = $form_data['animal_id'];
         // $animal = Animal::find($animal_id);
         // $animal_vaccination = $animal->animal_vaccinations;
-    
-        // $specific_animal_vaccination = Animal_Vaccination::find($animal_vaccination->id);
+        //dd($animal_vaccination);
+        //$specific_animal_vaccination = Animal_Vaccination::find($animal_vaccination->id);
         // dd($specific_animal_vaccination);
                 
         // $animal_vaccination->update($form_data);
@@ -205,7 +205,7 @@ class AnimalController extends Controller
         $form_data=$request->all();
         $animal_desease->update($form_data);
         
-        return redirect()->route('admin.animals.index.vaccine', ['animal' => $animal->id]);
+        return redirect()->route('admin.animals.index.desease', ['animal' => $animal->id]);
     }
 
     /**
@@ -245,13 +245,15 @@ class AnimalController extends Controller
         // Search in the title and body columns from the posts table
         $animals = Animal::query()
             ->where('name', 'LIKE', "%{$search}%")
-            ->orWhere('owner', 'LIKE', "%{$search}%")
+            
             ->orWhere('specie', 'LIKE', "%{$search}%")
             ->get();
 
-
+        $owner= Owner::query()
+        ->orWhere('name', 'LIKE', "%{$search}%")
+        ->get();
 
         // Return the search view with the resluts compacted
-        return view('admin.animals.search', compact('animals'));
+        return view('admin.animals.search', compact('animals', 'owner'));
     }
 }

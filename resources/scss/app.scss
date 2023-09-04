@@ -1,2 +1,74 @@
 @import '~bootstrap/scss/bootstrap';
-@import '/node_modules/@fortawesome/fontawesome-free/css/all.min.css'
+@import '/node_modules/@fortawesome/fontawesome-free/css/all.min.css';
+
+.button-link {
+    background-color: #32b1ac;
+    font-weight: bold;
+    color: whitesmoke;
+}
+
+.button-link:hover {
+    background-color: #00807C !important;
+}
+
+.add-button {
+    background-color: #E04F00;
+    color: white;
+    font-weight: bold;
+}
+
+.add-button:hover {
+    background-color: #943400 !important;
+    color: white;
+}
+
+.show-button {
+    background-color: #55d6af;
+}
+
+.show-button:hover {
+    background-color: #3f928b;
+    color: whitesmoke;
+}
+
+.edit-button {
+    background-color: #f19914;
+    color: whitesmoke;
+}
+
+.edit-button:hover {
+    background-color: #fac069;
+}
+
+.delete-button {
+    background-color: #943400;
+    color: white;
+}
+
+.delete-button:hover {
+    background-color: #f75600;
+    color: white;
+}
+
+.back-button {
+    background-color: transparent;
+    border: 2px solid #E04F00;
+    font-weight: bold;
+    color: #ad4e1a;
+}
+
+.back-button:hover {
+    background-color: #e76f2ead;
+    border: 2px solid #E04F00;
+    font-weight: bold;
+    color: #fffefe;
+}
+
+tbody {
+    cursor: pointer;
+    text-align: center;
+}
+
+thead {
+    text-align: center;
+}
