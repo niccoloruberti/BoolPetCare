@@ -7,18 +7,8 @@
         <a href="{{route('admin.animals.index')}}" class="btn btn-sm back-button"><i class="fa-regular fa-circle-left fa-l me-2" style="color: #ad4e1a;"></i>All Animals</a>
     </div>
     <div class="row justify-content-between my-4">
-<<<<<<< HEAD
-        <div class="col my-4">
-            <h2 class="text-uppercase">Edit Animal</h2>
-        </div>
-        <div class="col my-4">
-            <div class="text-end">
-                <a href="{{route('admin.animals.index')}}" class="btn btn-primary">Home</a>
-            </div>
-=======
         <div class="col my-4 text-center">
             <h2 class="">Modify <span style="color: #1f615f">Pet</span><i class="fas fa-paw ms-2 " style="color: #1f615f"></i> Record</h2>
->>>>>>> origin/style-brench
         </div>
        
         <div class="row">
@@ -57,40 +47,20 @@
                         </div>
                    
 
-<<<<<<< HEAD
-                   {{-- GENRE --}}
-                    <div class="form-group my-4">
-                        <label class="control-label mb-2" for="genre">Genre</label>
-                        <select class="form-control" name="genre">
-                            <option value="" {{ (old('genre') ?? $animal->genre) === '' ? 'selected' : '' }}>Choose genre...</option>
-                            <option value="M" {{ (old('genre') ?? $animal->genre) === 'M' ? 'selected' : '' }}>M</option>
-                            <option value="F" {{ (old('genre') ?? $animal->genre) === 'F' ? 'selected' : '' }}>F</option>
-                        </select>
-                        @error('genre')
-                            <div class="text-danger">{{ $message }}</div>
-                        @enderror
-                    </div>
-
-                    {{-- OWNER --}}
-                    {{-- <div class="form-group my-4">
-                        <label class="control-label mb-2">Owner</label>
-                        <input type="text" id="owner" name="owner" class="form-control @error('owner') is-invalid @enderror" value="{{old('owner') ?? $animal->owner}}" placeholder="Enter Owner's name and surname" required>
-                        @error('owner')
-                            <div class="text-danger">{{ $message }}</div>
-                        @enderror
-                    </div> --}}
-=======
-                    {{-- GENRE --}}
+                     {{-- GENRE --}}
                         <div class="d-flex align-items-center">
-                            <label class="control-label mb-2 me-3 fw-bold">Genre: </label>
-                            <input type="text" id="genre" name="genre" class="form-control @error('genre') is-invalid @enderror" value="{{old('genre') ?? $animal->genre}}" placeholder="Enter Genre" oninput="this.value = this.value.toUpperCase()">
+                            <label class="mb-2" for="genre">Genre</label>
+                            <select name="genre" id="genre" class="form-control @error('genre') is-invalid @enderror">
+                               <option value="" {{ (old('genre') == '') ? 'selected' : '' }}>Choose genre...</option>
+                               <option value="M" {{ (old('genre') == 'M') ? 'selected' : '' }}>M</option>
+                               <option value="F" {{ (old('genre') == 'F') ? 'selected' : '' }}>F</option>
+                            </select>
                             @error('genre')
-                                <div class="text-danger">{{ $message }}</div>
+                               <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
->>>>>>> origin/style-brench
 
-                    {{-- WEIGHT --}}
+                     {{-- WEIGHT --}}
                         <div class="d-flex align-items-center">
                             <label class="control-label mb-2 me-3 fw-bold">Weight:</label>
                             <input type="number" min="0" max="100" step=".1" id="weight" name="weight" class="form-control @error('weight') is-invalid @enderror" value="{{old('weight') ?? $animal->weight}}" placeholder="Enter Weight">
@@ -99,28 +69,19 @@
                             @enderror
                         </div>
 
-                        {{-- SIZE --}}
                         <div class="d-flex align-items-center">
-                            <label class="control-label mb-2 me-3 fw-bold">Size:</label>
-                            <input type="text" id="size" name="size" class="form-control" value="{{old('size') ?? $animal->size}}" placeholder="Enter Size" oninput="this.value = this.value.toUpperCase()" required>
+                            <label class="control-label mb-2 me-3 fw-bold">Size</label>
+                            <select class="form-control" name="size">
+                                <option value="S" {{ (old('size') ?? $animal->size) === 'S' ? 'selected' : '' }}>S</option>
+                                <option value="M" {{ (old('size') ?? $animal->size) === 'M' ? 'selected' : '' }}>M</option>
+                                <option value="L" {{ (old('size') ?? $animal->size) === 'L' ? 'selected' : '' }}>L</option>
+                            </select>
+                            @error('size')
+                                <div class="text-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                     </div>
-
-<<<<<<< HEAD
-                    {{-- SIZE --}}
-                    <div class="form-group my-4">
-                        <label class="control-label mb-2">Size</label>
-                        <select class="form-control" name="size">
-                            <option value="S" {{ (old('size') ?? $animal->size) === 'S' ? 'selected' : '' }}>S</option>
-                            <option value="M" {{ (old('size') ?? $animal->size) === 'M' ? 'selected' : '' }}>M</option>
-                            <option value="L" {{ (old('size') ?? $animal->size) === 'L' ? 'selected' : '' }}>L</option>
-                        </select>
-                        @error('size')
-                            <div class="text-danger">{{ $message }}</div>
-                        @enderror
-                    </div>
-=======
->>>>>>> origin/style-brench
+                     {{-- SIZE --}}
 
                     {{-- IMAGE --}}
                     <div class="form-group my-4">

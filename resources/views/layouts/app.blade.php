@@ -19,12 +19,8 @@
     @vite(['resources/js/app.js'])
 </head>
 
-<<<<<<< HEAD
-<body >
-=======
 <body>
     
->>>>>>> origin/style-brench
     <div id="app">
     <div class="container ">
         <nav class="navbar navbar-expand-md navbar-light py-4">

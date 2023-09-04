@@ -28,7 +28,7 @@
                </div>
                <div class="d-flex me-3">
                    <label class="control-label mb-2 fw-bold me-2">Specie: </label>
-                   <input type="text" id="specie" name="specie" class="form-control @error('specie') is-invalid @enderror" value="{{old('specie') }}" placeholder="Enter Specie" required>
+                   <input type="text" id="specie" name="specie" class="form-control @error('specie') is-invalid @enderror" value="{{old('specie')}}" placeholder="Enter Specie" required>
                    @error('specie')
                        <div class="text-danger">{{ $message }}</div>
                    @enderror
@@ -47,31 +47,20 @@
                </div>
           
 
-<<<<<<< HEAD
             {{-- GENRE --}}
-            <div class="form-group mt-4">
-               <label class="mb-2" for="genre">Genre</label>
-               <select name="genre" id="genre" class="form-control @error('genre') is-invalid @enderror">
-                  <option value="" {{ (old('genre') == '') ? 'selected' : '' }}>Choose genre...</option>
-                  <option value="M" {{ (old('genre') == 'M') ? 'selected' : '' }}>M</option>
-                  <option value="F" {{ (old('genre') == 'F') ? 'selected' : '' }}>F</option>
-               </select>
-               @error('genre')
-                  <div class="text-danger">{{ $message }}</div>
-               @enderror
-            </div>
-=======
-           {{-- GENRE --}}
                <div class="d-flex align-items-center">
-                   <label class="control-label mb-2 me-3 fw-bold">Genre: </label>
-                   <input type="text" id="genre" name="genre" class="form-control @error('genre') is-invalid @enderror" value="{{old('genre') }}" placeholder="Enter Genre" oninput="this.value = this.value.toUpperCase()">
+                   <label class="mb-2" for="genre">Genre</label>
+                   <select name="genre" id="genre" class="form-control @error('genre') is-invalid @enderror">
+                      <option value="" {{ (old('genre') == '') ? 'selected' : '' }}>Choose genre...</option>
+                      <option value="M" {{ (old('genre') == 'M') ? 'selected' : '' }}>M</option>
+                      <option value="F" {{ (old('genre') == 'F') ? 'selected' : '' }}>F</option>
+                   </select>
                    @error('genre')
-                       <div class="text-danger">{{ $message }}</div>
+                      <div class="text-danger">{{ $message }}</div>
                    @enderror
                </div>
->>>>>>> origin/style-brench
 
-           {{-- WEIGHT --}}
+            {{-- WEIGHT --}}
                <div class="d-flex align-items-center">
                    <label class="control-label mb-2 me-3 fw-bold">Weight:</label>
                    <input type="number" min="0" max="100" step=".1" id="weight" name="weight" class="form-control @error('weight') is-invalid @enderror" value="{{old('weight')}}" placeholder="Enter Weight">
@@ -80,29 +69,19 @@
                    @enderror
                </div>
 
-<<<<<<< HEAD
-            {{-- SIZE --}}
-            <div class="form-group mt-4">
-               <label class="mb-2" for="size">Size</label>
-               <select name="size" id="size" class="form-control @error('size') is-invalid @enderror" required>
-                  <option value="" {{ (old('size') == '') ? 'selected' : '' }}>Choose size...</option>
-                  <option value="S" {{ (old('size') == 'S') ? 'selected' : '' }}>S</option>
-                  <option value="M" {{ (old('size') == 'M') ? 'selected' : '' }}>M</option>
-                  <option value="L" {{ (old('size') == 'L') ? 'selected' : '' }}>L</option>
-               </select>
-               @error('size')
-                  <div class="text-danger">{{ $message }}</div>
-               @enderror
-            </div>
-=======
-               {{-- SIZE --}}
                <div class="d-flex align-items-center">
-                   <label class="control-label mb-2 me-3 fw-bold">Size:</label>
-                   <input type="text" id="size" name="size" class="form-control" value="{{old('size') }}" placeholder="Enter Size" oninput="this.value = this.value.toUpperCase()" required>
+                   <label class="control-label mb-2 me-3 fw-bold">Size</label>
+                   <select class="form-control" name="size">
+                       <option value="S" {{ (old('size')) === 'S' ? 'selected' : '' }}>S</option>
+                       <option value="M" {{ (old('size')) === 'M' ? 'selected' : '' }}>M</option>
+                       <option value="L" {{ (old('size')) === 'L' ? 'selected' : '' }}>L</option>
+                   </select>
+                   @error('size')
+                       <div class="text-danger">{{ $message }}</div>
+                   @enderror
                </div>
            </div>
->>>>>>> origin/style-brench
-
+            {{-- SIZE --}}
 
            {{-- IMAGE --}}
            <div class="form-group my-4">
@@ -116,7 +95,7 @@
            {{-- NOTES --}}
            <div class="form-group my-4">
                <label class="control-label mb-2 fw-bold">Notes:</label>
-               <textarea name="notes" id="notes" cols="30" rows="5" class="form-control" placeholder="Enter Notes">{{old('notes') }}</textarea>
+               <textarea name="notes" id="notes" cols="30" rows="5" class="form-control" placeholder="Enter Notes">{{old('notes')}}</textarea>
            </div>
            
            <div class=" form-group my-4 text-center">
