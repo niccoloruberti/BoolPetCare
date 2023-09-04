@@ -11,8 +11,15 @@
     background-color: #00807C !important;
 }
 
+.add-button {
+    background-color: #E04F00;
+    color: white;
+    font-weight: bold;
+}
+
 .add-button:hover {
     background-color: #943400 !important;
+    color: white;
 }
 
 .show-button {
@@ -34,7 +41,13 @@
 }
 
 .delete-button {
-    background-color: #943400
+    background-color: #943400;
+    color: white;
+}
+
+.delete-button:hover {
+    background-color: #f75600;
+    color: white;
 }
 
 .back-button {
@@ -49,4 +62,8 @@
     border: 2px solid #E04F00;
     font-weight: bold;
     color: #fffefe;
+}
+
+tbody {
+    cursor: pointer;
 }

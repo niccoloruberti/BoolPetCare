@@ -8,7 +8,7 @@
             <h4>Desease History</h4>
             <a class="btn btn-warning my-3" href="{{ route('admin.animals.create.desease', ['animal' => $animal])}}">Add Desease</a>
         </div>
-        <table class="table">
+        <table class="table table-hover">
             <thead>
                 <tr>
                     <th scope="col">Desease</th>
@@ -35,7 +35,7 @@
                     
                     {{-- EDIT BUTTON --}}
                      <td>
-                        <a href="{{ route('admin.animals.edit.desease', $animal->id)}}" class="btn btn-sm btn-warning">
+                        <a href="{{ route('admin.animals.edit.desease', $animal->id)}}" class="btn btn-sm edit-button">
                             <i class="fas fa-edit"></i>
                         </a>
                     </td>
@@ -45,7 +45,7 @@
                         <form class="d-inline-block" action="{{ route('admin.animals.destroy.vaccine', $animal->id)}}" onsubmit="return confirm('Sei sicuro di voler eliminare questo vaccino?')" method="POST">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-sm btn-danger">
+                            <button type="submit" class="btn btn-sm delete-button">
                                 <i class="fas fa-trash"></i>
                             </button>
                         </form>

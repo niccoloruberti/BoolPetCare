@@ -28,7 +28,7 @@
             </div>
             <div class="align-self-center">
 
-                <a class="btn text-white fw-bold add-button " style="background-color: #E04F00" href="{{ route('admin.animals.create')}}"><i class="fa-solid fa-circle-plus me-2" style="color: #ffffff;"></i>Add New Pet</a>
+                <a class="btn  add-button "  href="{{ route('admin.animals.create')}}"><i class="fa-solid fa-circle-plus me-2" style="color: #ffffff;"></i>Add New Pet</a>
             </div>
         </div>
         <table class="table table-hover" >
@@ -39,8 +39,8 @@
                     <th scope="col">Owner</th>
                     <th scope="col">Size</th>
                     <th scope="col">See More</th>
-                    <th scope="col">Edit</th>
-                    <th scope="col">Delete</th>
+                    <th scope="col">Modify Record</th>
+                    <th scope="col">Delete Record</th>
                 </tr>
             </thead>
             <tbody style="cursor: pointer" class="text-center">
@@ -71,7 +71,7 @@
                             <form class="d-inline-block" action="{{ route('admin.animals.destroy', $animal->id)}}" onsubmit="return confirm('Sei sicuro di voler eliminare questo animale?')" method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-sm btn-danger delete-button">
+                                <button type="submit" class="btn btn-sm  delete-button">
                                     <i class="fas fa-trash"></i>
                                 </button>
                             </form>
