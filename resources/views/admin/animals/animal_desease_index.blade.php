@@ -2,11 +2,14 @@
 
 @section('content')
 <div class="container">
+    <div class="my-4 d-flex justify-content-start">
+        <a href="{{route('admin.animals.show', ['animal'=>$animal])}}" class="btn btn-sm back-button"><i class="fa-regular fa-circle-left fa-l me-2" style="color: #ad4e1a;"></i>Back to {{$animal->name}}</a>
+    </div>
     <div class="row">
 
-        <div class="text-center my-5">
-            <h4>Desease History</h4>
-            <a class="btn btn-warning my-3" href="{{ route('admin.animals.create.desease', ['animal' => $animal])}}">Add Desease</a>
+        <div class="text-center my-5 fw-bold d-flex justify-content-between align-items-center">
+            <h2><i class="fa-solid fa-square-virus" style="color: #1f615f"></i> Desease History</h2>
+            <a class="btn add-button my-3" href="{{ route('admin.animals.create.desease', ['animal' => $animal])}}"><i class="fa-solid fa-circle-plus me-2" style="color: #ffffff;"></i> Add Desease</a>
         </div>
         <table class="table table-hover">
             <thead>

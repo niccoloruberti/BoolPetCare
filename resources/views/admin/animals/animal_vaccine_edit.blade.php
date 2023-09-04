@@ -20,9 +20,9 @@
                 <label for="booster_date" class="fw-bold ms-5 me-2">Booster Date: </label>
                 <input type="date" name="booster_date" id="booster_date" placeholder="booster" >
             
-            
+                
                 <label for="dose" class="fw-bold ms-5 me-3">Injection Dose: </label>
-                <input type="text" name="dose" id="dose" placeholder="dose /mg" >
+                <input type="text" name="dose" id="dose" placeholder="dose /mg" class="mt-3 mt-md-0">
                 <input type="hidden" name="animal_id" value="{{ $animal->id}}">
                 <input type="hidden" name="animal_vaccination_id" value="{{ $animal_vaccination->id }}">
             </div>
