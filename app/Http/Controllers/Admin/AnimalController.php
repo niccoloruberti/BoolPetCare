@@ -224,7 +224,8 @@ class AnimalController extends Controller
 
     public function animal_vaccine_destroy(Animal_Vaccination $animal_vaccination, Animal $animal)
     {
-        $animal_vaccination = Animal_Vaccination::find($animal->id);
+        $animal_id = $animal->id;
+        $animal_vaccination = Animal_Vaccination::where('animal_id', $animal_id)->first();
         $animal_vaccination->delete();
         return  redirect()->route('admin.animals.index.vaccine', ['animal' => $animal->id]);
     }
