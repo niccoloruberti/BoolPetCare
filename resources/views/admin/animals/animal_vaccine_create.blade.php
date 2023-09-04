@@ -31,10 +31,14 @@
                 <div class="my-5 col-6 offset-3">
                     <label for="vaccination_id" class="fw-bold d-block mb-2">Choose Vaccine:</label>
                     <select class="form-control" name="vaccination_id" id="vaccination_id" required>
+                        <option value="">Select a Vaccine..</option>
                         @foreach($vaccinations as $vaccine)
-                        <option value="{{$vaccine->id}}" >{{$vaccine->vaccine}}</option>
+                        <option value="{{$vaccine->id}}" {{ old('vaccination_id') == $vaccine->id ? 'selected' : '' }}>
+                            {{$vaccine->vaccine}}
+                        </option>
                         @endforeach
                     </select>
+                </div>
                 </div>
                 <div class="text-center">
                     <button class="btn edit-button" type="submit">Add Vaccination</button>
