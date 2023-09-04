@@ -45,6 +45,7 @@
             <div class="form-group mt-4">
                <label class="mb-2" for="genre">Genre</label>
                <select name="genre" id="genre" class="form-control @error('genre') is-invalid @enderror" required>
+                  <option value="" {{ (old('genre') == '') ? 'selected' : '' }}>Choose genre...</option>
                   <option value="M" {{ (old('genre') == 'M') ? 'selected' : '' }}>M</option>
                   <option value="F" {{ (old('genre') == 'F') ? 'selected' : '' }}>F</option>
                </select>
@@ -66,6 +67,7 @@
             <div class="form-group mt-4">
                <label class="mb-2" for="size">Size</label>
                <select name="size" id="size" class="form-control @error('size') is-invalid @enderror" required>
+                  <option value="" {{ (old('size') == '') ? 'selected' : '' }}>Choose size...</option>
                   <option value="S" {{ (old('size') == 'S') ? 'selected' : '' }}>S</option>
                   <option value="M" {{ (old('size') == 'M') ? 'selected' : '' }}>M</option>
                   <option value="L" {{ (old('size') == 'L') ? 'selected' : '' }}>L</option>
