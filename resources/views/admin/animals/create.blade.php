@@ -35,6 +35,20 @@
                @enderror
             </div>
 
+            {{-- SPECIE-TABELLA --}}
+            <div class="form-group mt-4">
+                <label class="control-label">categoria</label>
+                <select  name="specie_id" id="specie_id" class="form-control @error('specie_id') is-invalid @enderror" placeholder="specie_id" value="{{ old('specie_id')}}">
+                    <option value="">seleziona categoria</option>
+                    @foreach($species as $specie)
+                       <option value="{{$specie->id}}">{{$specie->name}}</option>
+                    @endforeach
+                </select>
+             </div> 
+             @error('specie_id')
+             <div class="text-danger">{{ $message}}</div>
+             @enderror
+
             {{-- DATE OF BIRTH --}}
             <div class="form-group mt-4">
                <label class="mb-2" for="date_of_birth">Date of birth</label>

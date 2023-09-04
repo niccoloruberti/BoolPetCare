@@ -29,4 +29,8 @@ class Animal extends Model
     public function animal_vaccinations() {
         return $this->hasMany(Animal_Vaccination::class);
     }
+
+    public function specie(){
+        return $this->belongTo(Specie::class);
+    }
 }

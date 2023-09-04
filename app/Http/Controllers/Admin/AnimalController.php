@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use App\Models\Vaccination;
 use App\Models\Animal_Vaccination;
 use App\Models\Desease;
+use App\Models\Specie;
 use App\Models\AnimalDesease;
 
 class AnimalController extends Controller
@@ -52,9 +53,10 @@ class AnimalController extends Controller
      */
     public function create(Request $request)
     {
+        $species = Specie::all();
         $id_owner = array_keys($request->query());
         $id_owner = reset($id_owner);
-        return view('admin.animals.create', compact('id_owner'));
+        return view('admin.animals.create', compact('id_owner', 'species'));
     }
 
     public function animal_vaccine_create(Request $request, Animal $animal)
@@ -136,7 +138,7 @@ class AnimalController extends Controller
      */
     public function edit(Animal $animal)
     {
-        return view('admin.animals.edit', compact('animal'));
+        return view('admin.animals.edit', compact('animal', 'species'));
     }
 
     public function animal_vaccine_edit(Animal $animal, Request $request, Animal_Vaccination $animal_vaccination)
