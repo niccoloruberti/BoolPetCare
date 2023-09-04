@@ -24,7 +24,16 @@ class StoreDeseaseRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'required|max:50',
+
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'name.required' => 'Name is required!',
+
         ];
     }
 }
