@@ -46,6 +46,7 @@
                     <div class="form-group my-4">
                         <label class="control-label mb-2" for="genre">Genre</label>
                         <select class="form-control" name="genre">
+                            <option value="" {{ (old('genre') ?? $animal->genre) === '' ? 'selected' : '' }}>Choose genre...</option>
                             <option value="M" {{ (old('genre') ?? $animal->genre) === 'M' ? 'selected' : '' }}>M</option>
                             <option value="F" {{ (old('genre') ?? $animal->genre) === 'F' ? 'selected' : '' }}>F</option>
                         </select>
