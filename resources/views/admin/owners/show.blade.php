@@ -14,7 +14,7 @@
                 {{-- qui probabilmente va inserito che riporti agli animali di questo proprietario --}}
             </div>
             <div class="col-12 text-center">
-                <h3 class="mb-5"> <span style="color:#E04F00">Owner</span> Record</h3>
+                <h3 class="mb-5"> <span style="color:#E04F00">Owner  <i class="fas fa-person "></i></span> Record</h3>
                 <div class="d-flex justify-content-center align-items-center">
                     <div class="col-5 d-flex flex-column ">
                         

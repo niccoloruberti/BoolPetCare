@@ -7,7 +7,7 @@
     </div>
    <div class="row">
        <div class="col-12 my-5 text-center">
-           <h1 class="">Modify <span style="color:#E04F00">Owner</span></h1>
+           <h1 class="">Modify <span style="color:#E04F00">Owner  <i class="fas fa-person "></i></span></h1>
        </div>
         
        <div class="col-12">
