@@ -230,6 +230,13 @@ class AnimalController extends Controller
         return  redirect()->route('admin.animals.index.vaccine', ['animal' => $animal->id]);
     }
 
+    public function animal_desease_destroy(Animal $animal, Desease $desease) {
+        $animal_id = $animal->id;
+        $animal_desease = AnimalDesease::where('animal_id', $animal_id)->first();
+        $animal_desease->delete();
+        return redirect()->route('admin.animals.index.desease', ['animal' => $animal->id]);
+    }
+
     public function search(Request $request)
     {
         // Get the search value from the request
