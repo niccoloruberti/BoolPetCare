@@ -87,9 +87,9 @@
         <main class="" style="min-height: 85vh">
             @yield('content')
         </main>
-        <footer class="bg-dark text-white text-center py-3">
+        <footer class="text-white text-center py-2 " style="background-color: #143a39">
             <div class="container">
-                <p>&copy; 2023 BoolPetCare. Tutti i diritti riservati.</p>
+                <p>&copy; 2023 BoolPetCare. All right reserved.</p>
             </div>
         </footer>
     </div>
