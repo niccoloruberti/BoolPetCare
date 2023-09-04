@@ -44,7 +44,7 @@
             {{-- GENRE --}}
             <div class="form-group mt-4">
                <label class="mb-2" for="genre">Genre</label>
-               <select name="genre" id="genre" class="form-control @error('genre') is-invalid @enderror" required>
+               <select name="genre" id="genre" class="form-control @error('genre') is-invalid @enderror">
                   <option value="" {{ (old('genre') == '') ? 'selected' : '' }}>Choose genre...</option>
                   <option value="M" {{ (old('genre') == 'M') ? 'selected' : '' }}>M</option>
                   <option value="F" {{ (old('genre') == 'F') ? 'selected' : '' }}>F</option>
