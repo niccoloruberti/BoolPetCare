@@ -205,7 +205,7 @@ class AnimalController extends Controller
         $form_data=$request->all();
         $animal_desease->update($form_data);
         
-        return redirect()->route('admin.animals.index.vaccine', ['animal' => $animal->id]);
+        return redirect()->route('admin.animals.index.desease', ['animal' => $animal->id]);
     }
 
     /**
