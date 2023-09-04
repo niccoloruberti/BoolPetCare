@@ -27,6 +27,7 @@ class StoreAnimalRequest extends FormRequest
             'name' => 'required|max:50',
             'specie' => 'required|max:50',
 
+
             'weight' => 'numeric|nullable',
             'size' => 'required',
             'img_link' => 'url:http,https|nullable',
